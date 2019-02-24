@@ -10,19 +10,23 @@
         "useBuiltIns": "usage"
       }
     ],
-    "@babel/preset-react",
-    "@babel/preset-typescript"
-  ],
-  "plugins": [
-    "react-hot-loader/babel",
     [
-      "emotion",
+      "@emotion/babel-preset-css-prop",
       {
         "sourceMap": true,
         "autoLabel": true
       }
     ],
-    "@babel/proposal-class-properties",
+    "@babel/preset-react",
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
     "@babel/proposal-object-rest-spread",
     [
       "@babel/plugin-proposal-decorators",

@@ -1,7 +1,8 @@
 import * as React from 'react';
+import * as styles from './roomTitle.styles';
 
 export const RoomTitleComponent: React.StatelessComponent = () => (
-  <div>
-    <h1>Title</h1>
+  <div className={styles.roomTitle}>
+    <p className={styles.title}>Group</p>
   </div>
 );

@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { hot } from 'react-hot-loader';
-import { ChatRoomComponent } from './Component/ChatRoom';
+import { ChatRoom } from './components/chatRoom';
 
 let App: React.StatelessComponent = () => (
-  <ChatRoomComponent />
+  <ChatRoom />
 );
 
 App = hot(module)(App);

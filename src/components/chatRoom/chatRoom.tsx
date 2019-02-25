@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { RoomTitleComponent } from './components/roomTitleComponent';
+import { RoomTitleComponent } from './Components/';
 
 export const ChatRoom: React.StatelessComponent = () => (
   <>

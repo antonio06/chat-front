@@ -1,1 +1,1 @@
-export * from './roomTitleComponent';
+export * from './roomTitle';

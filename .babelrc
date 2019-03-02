@@ -14,13 +14,28 @@
       "@emotion/babel-preset-css-prop",
       {
         "sourceMap": true,
-        "autoLabel": true
+        "labelFormat": "[filename]__[local]"
       }
     ],
     "@babel/preset-react",
     "@babel/preset-typescript"
   ],
   "plugins": [
+    [
+      "@wordpress/babel-plugin-import-jsx-pragma",
+      {
+        "scopeVariable": "jsx",
+        "source": "@emotion/core",
+        "isDefault": false,
+      }
+    ],
+    [
+      "@babel/transform-react-jsx",
+      {
+        "pragma": "jsx",
+        "pragmaFrag": "React.Fragment"
+      }
+    ],
     [
       "@babel/plugin-proposal-class-properties",
       {

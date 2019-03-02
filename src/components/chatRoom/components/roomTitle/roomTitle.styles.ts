@@ -5,7 +5,7 @@ export const roomTitle = css`
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 3rem;
-  background-color: ${theme.colors.headerChatColor};
+  background-color: ${theme.colors.headerChat};
 `;
 
 export const title = css`
@@ -14,5 +14,5 @@ export const title = css`
   font-family: ${theme.font};
   font-weight: 900;
   font-size: 2rem;
-  color: ${theme.colors.titleColor};
+  color: ${theme.colors.title};
 `;

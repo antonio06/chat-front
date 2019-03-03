@@ -20,7 +20,7 @@ export const messageWrapper = css`
   border-top-left-radius: ${radiusAmount};
   border-bottom-left-radius: ${radiusAmount};
   padding: 1.5rem;
-  background-color: white;
+  background-color: ${theme.colors.card};
 `;
 
 export const message = css`

@@ -17,6 +17,18 @@ export const Dashboard: React.StatelessComponent = () => (
       user={'Paul'}
       message={'Melisa, where are you ?'}
     />
+    <Card
+      user={'Adrian'}
+      message={'Hi everyone. How are you ?. I am working right now'}
+    />
+    <Card
+      user={'Melisa'}
+      message={'Hello Adrian, when you will finish to work call me please'}
+    />
+    <Card
+      user={'Paul'}
+      message={'Melisa, where are you ?'}
+    />
     <Type />
   </div>
 );

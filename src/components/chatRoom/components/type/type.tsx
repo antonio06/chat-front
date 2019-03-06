@@ -8,8 +8,8 @@ export const Type: React.StatelessComponent = () => (
       placeholder="Type here something"
       onChange={() => { }}
       value=""
-      rows={4}
-      cols={50}
+      rows={3}
+      cols={100}
       css={styles.textarea}
     />
   </div>

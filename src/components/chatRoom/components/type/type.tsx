@@ -1,10 +1,16 @@
 import * as React from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
+import * as styles from './type.styles';
 
 export const Type: React.StatelessComponent = () => (
-  <TextareaAutosize
-    placeholder="Type here something"
-    onChange={() => {}}
-    value=""
-  />
+  <div css={styles.type}>
+    <TextareaAutosize
+      placeholder="Type here something"
+      onChange={() => { }}
+      value=""
+      rows={4}
+      cols={50}
+      css={styles.textarea}
+    />
+  </div>
 );

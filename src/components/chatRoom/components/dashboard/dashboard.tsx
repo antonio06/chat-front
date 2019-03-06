@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as styles from './dashboard.style';
 import { Card } from '../card';
+import { Type } from '../type';
 
 export const Dashboard: React.StatelessComponent = () => (
   <div css={styles.dashboard}>
@@ -16,5 +17,6 @@ export const Dashboard: React.StatelessComponent = () => (
       user={'Paul'}
       message={'Melisa, where are you ?'}
     />
+    <Type />
   </div>
 );

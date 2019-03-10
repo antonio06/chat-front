@@ -8,4 +8,4 @@ export const Room: React.StatelessComponent = () => (
     <Dashboard />
     <TypeComponent />
   </div>
-)
+);

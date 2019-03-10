@@ -1,1 +1,1 @@
-export * from './typeComponent';
+export * from './type';

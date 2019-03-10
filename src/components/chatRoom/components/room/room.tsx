@@ -1,11 +1,30 @@
 import * as React from 'react';
 import { Dashboard } from '../dashboard';
-import { TypeComponent } from '../type';
+import { Type } from '../type';
 import * as styles from './room.styles';
 
-export const Room: React.StatelessComponent = () => (
-  <div css={styles.room}>
-    <Dashboard />
-    <TypeComponent />
-  </div>
+interface Props {
+  message: string;
+  user: string;
+  onChangeMessage: (newMessage: string) => void;
+  onSubmit: () => void;
+}
+
+export const Room: React.StatelessComponent<Props> = (props) => (
+  <form css={styles.room} onKeyPress={sendMessage(props)}>
+    <Dashboard
+      user={props.user}
+      message={props.message}
+    />
+    <Type
+      message={props.message}
+      onChangeMessage={props.onChangeMessage}
+    />
+  </form>
 );
+
+// Pending Refactor
+const sendMessage = (props: Props) => (event: React.KeyboardEvent<HTMLElement>) => {
+  event.preventDefault();
+  props.onSubmit();
+};

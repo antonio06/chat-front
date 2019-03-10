@@ -1,12 +1,14 @@
 import * as React from 'react';
-import { Type } from './type';
+import { Room } from './room';
 
 interface State {
+  user: string;
   message: string;
 }
 
-export class TypeComponent extends React.Component<{}, State> {
+export class RoomComponent extends React.Component<{}, State> {
   state = {
+    user: '',
     message: '',
   };
 
@@ -16,11 +18,20 @@ export class TypeComponent extends React.Component<{}, State> {
     });
   }
 
+  onSubmit = () => {
+    this.setState({
+      user: 'Mark',
+      message: this.state.message,
+  });
+}
+
   render() {
     return (
-      <Type
+      <Room
         message={this.state.message}
+        user={this.state.user}
         onChangeMessage={this.onChangeMessage}
+        onSubmit={this.onSubmit}
       />
     );
   }

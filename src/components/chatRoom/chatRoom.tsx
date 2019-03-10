@@ -1,12 +1,10 @@
 import * as React from 'react';
-import { Dashboard } from './Components/dashboard';
 import { RoomTitle } from './Components/roomTitle';
-import { Type } from './Components/type';
+import { Room } from './Components/room';
 
 export const ChatRoom: React.StatelessComponent = () => (
   <>
     <RoomTitle />
-    <Dashboard />
-    <Type />
+    <Room />
   </>
 );

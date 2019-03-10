@@ -2,15 +2,24 @@ import * as React from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
 import * as styles from './type.styles';
 
-export const Type: React.StatelessComponent = () => (
+interface Props {
+  message: string;
+  onChangeMessage: (newMessage: string) => void;
+}
+
+export const Type: React.StatelessComponent<Props> = (props) => (
   <div css={styles.type}>
     <TextareaAutosize
       placeholder="Type here something"
-      onChange={() => { }}
-      value=""
+      onChange={onChangeHandler(props)}
+      value={props.message}
       rows={3}
       cols={100}
       css={styles.textarea}
     />
   </div>
 );
+
+const onChangeHandler = (props: Props) => (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+  props.onChangeMessage(event.target.value);
+}

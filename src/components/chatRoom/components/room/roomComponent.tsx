@@ -18,12 +18,15 @@ export class RoomComponent extends React.Component<{}, State> {
     });
   }
 
-  onSubmit = () => {
-    this.setState({
-      user: 'Mark',
-      message: this.state.message,
-  });
-}
+  onSubmit = (message: string, codeKey: number) => {
+    console.log(codeKey);
+    if (codeKey === 13) {
+      this.setState({
+        user: 'Mark',
+        message,
+      });
+    }
+  }
 
   render() {
     return (

@@ -7,7 +7,7 @@ interface Props {
   message: string;
   user: string;
   onChangeMessage: (newMessage: string) => void;
-  onSubmit: () => void;
+  onSubmit: (message: string, codeKey: number) => void;
 }
 
 export const Room: React.StatelessComponent<Props> = (props) => (
@@ -25,6 +25,5 @@ export const Room: React.StatelessComponent<Props> = (props) => (
 
 // Pending Refactor
 const sendMessage = (props: Props) => (event: React.KeyboardEvent<HTMLElement>) => {
-  event.preventDefault();
-  props.onSubmit();
+    props.onSubmit(props.message, event.which);
 };

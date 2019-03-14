@@ -2,19 +2,19 @@ import * as React from 'react';
 import { Dashboard } from '../dashboard';
 import { Type } from '../type';
 import * as styles from './room.styles';
+import { Conversation } from './viewModel';
 
 interface Props {
   message: string;
-  user: string;
+  conversation: Conversation;
   onChangeMessage: (newMessage: string) => void;
-  onSubmit: (message: string, codeKey: number) => void;
+  onSubmit: () => void;
 }
 
 export const Room: React.StatelessComponent<Props> = (props) => (
   <form css={styles.room} onKeyPress={sendMessage(props)}>
     <Dashboard
-      user={props.user}
-      message={props.message}
+      conversation={props.conversation}
     />
     <Type
       message={props.message}
@@ -23,7 +23,8 @@ export const Room: React.StatelessComponent<Props> = (props) => (
   </form>
 );
 
-// Pending Refactor
 const sendMessage = (props: Props) => (event: React.KeyboardEvent<HTMLElement>) => {
-    props.onSubmit(props.message, event.which);
+  if (event.which === 13) {
+    props.onSubmit();
+  }
 };

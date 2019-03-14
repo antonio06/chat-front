@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { Room } from './room';
+import { Conversation, DefaultConversation } from './viewModel';
 
 interface State {
-  user: string;
   message: string;
+  conversation: Conversation;
 }
 
 export class RoomComponent extends React.Component<{}, State> {
   state = {
-    user: '',
+    conversation: DefaultConversation(),
     message: '',
   };
 
@@ -18,21 +19,21 @@ export class RoomComponent extends React.Component<{}, State> {
     });
   }
 
-  onSubmit = (message: string, codeKey: number) => {
-    console.log(codeKey);
-    if (codeKey === 13) {
-      this.setState({
+  onSubmit = () => {
+    this.setState({
+      conversation: {
         user: 'Mark',
-        message,
-      });
-    }
+        message: this.state.message,
+      },
+      message: '',
+    });
   }
 
   render() {
     return (
       <Room
         message={this.state.message}
-        user={this.state.user}
+        conversation={this.state.conversation}
         onChangeMessage={this.onChangeMessage}
         onSubmit={this.onSubmit}
       />

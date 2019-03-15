@@ -6,7 +6,7 @@ import { Conversation } from './viewModel';
 
 interface Props {
   message: string;
-  conversation: Conversation;
+  conversations: Conversation[];
   onChangeMessage: (newMessage: string) => void;
   onSubmit: () => void;
 }
@@ -14,7 +14,7 @@ interface Props {
 export const Room: React.StatelessComponent<Props> = (props) => (
   <form css={styles.room} onKeyPress={sendMessage(props)}>
     <Dashboard
-      conversation={props.conversation}
+      conversations={props.conversations}
     />
     <Type
       message={props.message}

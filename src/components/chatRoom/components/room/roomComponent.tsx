@@ -1,15 +1,16 @@
 import * as React from 'react';
 import { Room } from './room';
-import { Conversation, DefaultConversation } from './viewModel';
+import { Conversation } from './viewModel';
+const uuidv4 = require('uuid/v4');
 
 interface State {
   message: string;
-  conversation: Conversation;
+  conversations: Conversation[];
 }
 
 export class RoomComponent extends React.Component<{}, State> {
   state = {
-    conversation: DefaultConversation(),
+    conversations: [],
     message: '',
   };
 
@@ -21,10 +22,14 @@ export class RoomComponent extends React.Component<{}, State> {
 
   onSubmit = () => {
     this.setState({
-      conversation: {
-        user: 'Mark',
-        message: this.state.message,
-      },
+      conversations: [
+        ...this.state.conversations,
+        {
+          id: uuidv4(),
+          message: this.state.message,
+          user: 'Mark',
+        }
+      ],
       message: '',
     });
   }
@@ -33,7 +38,7 @@ export class RoomComponent extends React.Component<{}, State> {
     return (
       <Room
         message={this.state.message}
-        conversation={this.state.conversation}
+        conversations={this.state.conversations}
         onChangeMessage={this.onChangeMessage}
         onSubmit={this.onSubmit}
       />

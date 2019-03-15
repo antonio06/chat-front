@@ -4,16 +4,18 @@ import { Card } from '../card';
 import { Conversation } from '../room/viewModel';
 
 interface Props {
-  conversation: Conversation;
+  conversations: Conversation[];
 }
 
 export const Dashboard: React.StatelessComponent<Props> = (props) => (
   <div css={styles.dashboard}>
     {
-      props.conversation.message &&
-      <Card
-        conversation={props.conversation}
-      />
+      props.conversations.map((conversation) =>
+        <Card
+          key={conversation.id}
+          conversation={conversation}
+        />
+      )
     }
   </div>
 );

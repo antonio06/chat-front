@@ -14,7 +14,8 @@
     "react-autosize-textarea": "^6.0.0",
     "react-dom": "^16.8.3",
     "react-hot-loader": "^4.7.1",
-    "typeface-quattrocento-sans": "0.0.72"
+    "typeface-quattrocento-sans": "0.0.72",
+    "uuid": "^3.3.2"
   },
   "description": "A React chat app",
   "devDependencies": {

@@ -14,7 +14,7 @@ export const Dashboard: React.StatelessComponent<Props> = (props) => (
         <Card
           key={conversation.id}
           conversation={conversation}
-        />
+        />,
       )
     }
   </div>

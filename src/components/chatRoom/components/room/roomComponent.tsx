@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Room } from './room';
-import { Conversation } from './viewModel';
+import { Conversation, defaultConversationValues } from './viewModel';
 const uuidv4 = require('uuid/v4');
 
 interface State {
@@ -10,7 +10,7 @@ interface State {
 
 export class RoomComponent extends React.Component<{}, State> {
   state = {
-    conversations: [],
+    conversations: defaultConversationValues(),
     message: '',
   };
 

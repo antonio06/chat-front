@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Room } from './room';
 import { Conversation, defaultConversationValues } from './viewModel';
+import * as styles from './room.styles';
 const uuidv4 = require('uuid/v4');
 
 interface State {
@@ -21,17 +22,19 @@ export class RoomComponent extends React.Component<{}, State> {
   }
 
   onSubmit = () => {
-    this.setState({
-      conversations: [
-        ...this.state.conversations,
-        {
-          id: uuidv4(),
-          message: this.state.message,
-          user: 'Mark',
-        }
-      ],
-      message: '',
-    });
+    if (this.state.message !== '') {
+      this.setState({
+        conversations: [
+          ...this.state.conversations,
+          {
+            id: uuidv4(),
+            message: this.state.message,
+            user: 'Mark',
+          },
+        ],
+        message: '',
+      });
+    }
   }
 
   render() {

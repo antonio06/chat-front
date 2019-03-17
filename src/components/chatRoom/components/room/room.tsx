@@ -3,6 +3,7 @@ import { Dashboard } from '../dashboard';
 import { Type } from '../type';
 import * as styles from './room.styles';
 import { Conversation } from './viewModel';
+const keyCode = 13;
 
 interface Props {
   message: string;
@@ -24,7 +25,7 @@ export const Room: React.StatelessComponent<Props> = (props) => (
 );
 
 const sendMessage = (props: Props) => (event: React.KeyboardEvent<HTMLElement>) => {
-  if (event.which === 13) {
+  if (event.which === keyCode) {
     props.onSubmit();
   }
 };

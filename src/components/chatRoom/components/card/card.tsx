@@ -7,10 +7,15 @@ interface Props {
 }
 
 export const Card: React.StatelessComponent<Props> = (props) => (
-  <div css={styles.card}>
-    <h3 css={styles.user}>{props.conversation.user}</h3>
-    <div css={styles.messageWrapper}>
-      <p css={styles.message}>{props.conversation.message}</p>
-    </div>
-  </div>
+  <>
+    {
+      props.conversation.message &&
+      <div css={styles.card}>
+        <h3 css={styles.user}>{props.conversation.user}</h3>
+        <div css={styles.messageWrapper}>
+          <p css={styles.message}>{props.conversation.message}</p>
+        </div>
+      </div>
+    }
+  </>
 );

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Room } from './room';
 import { Conversation, defaultConversationValues } from './viewModel';
-import * as styles from './room.styles';
 const uuidv4 = require('uuid/v4');
 
 interface State {

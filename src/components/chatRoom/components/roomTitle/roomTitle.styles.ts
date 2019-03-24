@@ -5,14 +5,14 @@ export const roomTitle = css`
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: 3rem;
-  background-color: ${theme.colors.headerChat};
+  background-color: ${theme.colors.headerChat.background};
 `;
 
 export const title = css`
   padding: 0px;
   margin: 0px;
-  font-family: ${theme.font};
+  font-family: ${theme.fontFamily};
   font-weight: 900;
   font-size: 2rem;
-  color: ${theme.colors.title};
+  color: ${theme.colors.headerChat.title};
 `;

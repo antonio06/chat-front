@@ -8,7 +8,7 @@ export const card = css`
 `;
 
 export const user = css`
-  font-family: ${theme.font};
+  font-family: ${theme.fontFamily};
   font-weight: 900;
   padding-bottom: 1rem;
 `;
@@ -20,10 +20,10 @@ export const messageWrapper = css`
   border-top-left-radius: ${radiusAmount};
   border-bottom-left-radius: ${radiusAmount};
   padding: 1.5rem;
-  background-color: ${theme.colors.card};
+  background-color: ${theme.colors.card.background};
 `;
 
 export const message = css`
-  font-family: ${theme.font};
+  font-family: ${theme.fontFamily};
   font-weight: 300;
 `;

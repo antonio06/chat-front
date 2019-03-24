@@ -3,6 +3,10 @@ import * as styles from './modal.styles';
 
 export const Modal: React.StatelessComponent = () =>  (
   <div css={styles.modal}>
-    <h1>Hello modal component</h1>
+    <input
+      placeholder="Type name"
+      css={styles.input}
+    />
+    <button css={styles.button}>Conect</button>
   </div>
 );

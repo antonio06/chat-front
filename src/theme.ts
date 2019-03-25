@@ -5,7 +5,7 @@ const roomColor = '#e8f2f3';
 const cardColor = '#fefffd';
 const overlayColor = '#989898';
 const modalColor = '#ffffff';
-const modalElements = '#b6d6d9';
+const modalElements = '#84babf';
 
 export const theme = {
   fontFamily: 'Quattrocento Sans',

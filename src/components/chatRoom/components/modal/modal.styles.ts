@@ -1,5 +1,6 @@
 import { css } from '@emotion/core';
 import { theme } from '../../../../theme';
+const borderRadiusAmount = '0.5rem';
 
 export const modal = css`
   display: flex;
@@ -29,9 +30,17 @@ export const input = css`
 
 export const button = css`
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   background-color: ${theme.colors.modal.button};
   color: white;
   border: none;
-  font-family: ${theme.fontFamily}
+  font-family: ${theme.fontFamily};
+  font-weight: bold;
+  border-top-left-radius: ${borderRadiusAmount};
+  border-bottom-left-radius: ${borderRadiusAmount};
+  border-top-right-radius: ${borderRadiusAmount};
+  border-bottom-right-radius: ${borderRadiusAmount};
+  :focus {
+    outline: none;
+  }
 `;

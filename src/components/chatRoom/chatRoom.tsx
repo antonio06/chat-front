@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { RoomTitle } from './Components/roomTitle';
-import { RoomComponent } from './Components/room';
+import * as styles from './chatRoom.styles';
 import { Modal } from './Components/modal';
 import { Overlay } from './Components/overlay';
-import * as styles from './chatRoom.styles';
+import { RoomContainer } from './Components/room';
+import { RoomTitle } from './Components/roomTitle';
 
 interface Props {
   isFadeout: boolean;
@@ -18,6 +18,6 @@ export const ChatRoom: React.StatelessComponent<Props> = (props) => (
       isFadeout={props.isFadeout}
     />
     <RoomTitle />
-    <RoomComponent />
+    <RoomContainer />
   </div>
 );

@@ -1,7 +1,7 @@
 import * as React from 'react';
-import * as styles from './dashboard.style';
 import { Card } from '../card';
 import { Conversation } from '../room/viewModel';
+import * as styles from './dashboard.style';
 
 interface Props {
   conversations: Conversation[];

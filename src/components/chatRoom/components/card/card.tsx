@@ -1,6 +1,6 @@
 import * as React from 'react';
-import * as styles from './card.styles';
 import { Conversation } from '../room/viewModel';
+import * as styles from './card.styles';
 
 interface Props {
   conversation: Conversation;

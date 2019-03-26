@@ -8,7 +8,7 @@ interface State {
   conversations: Conversation[];
 }
 
-export class RoomComponent extends React.Component<{}, State> {
+export class RoomContainer extends React.Component<{}, State> {
   state = {
     conversations: defaultConversationValues(),
     message: '',

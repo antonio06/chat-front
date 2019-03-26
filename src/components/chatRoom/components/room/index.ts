@@ -1,1 +1,1 @@
-export * from './roomComponent';
+export * from './roomContainer';

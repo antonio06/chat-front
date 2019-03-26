@@ -44,3 +44,7 @@ export const button = css`
     outline: none;
   }
 `;
+
+export const fadeout = css`
+  visibility: hidden;
+`;

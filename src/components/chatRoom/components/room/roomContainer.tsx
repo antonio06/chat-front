@@ -3,12 +3,16 @@ import { Room } from './room';
 import { Conversation, defaultConversationValues } from './viewModel';
 const uuidv4 = require('uuid/v4');
 
+interface Props {
+  userName: string;
+}
+
 interface State {
   message: string;
   conversations: Conversation[];
 }
 
-export class RoomContainer extends React.Component<{}, State> {
+export class RoomContainer extends React.Component<Props, State> {
   state = {
     conversations: defaultConversationValues(),
     message: '',
@@ -28,7 +32,7 @@ export class RoomContainer extends React.Component<{}, State> {
           {
             id: uuidv4(),
             message: this.state.message,
-            user: 'Mark',
+            user: this.props.userName,
           },
         ],
         message: '',

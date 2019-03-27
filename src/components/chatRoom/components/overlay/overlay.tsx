@@ -11,6 +11,6 @@ export const Overlay: React.StatelessComponent<Props> = (props) => (
 
 const isFadeout = (props: Props) => (
   !props.isFadeout ?
-    styles.fadeout :
-    ''
+    '' :
+    styles.fadeout
 );

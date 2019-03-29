@@ -12,6 +12,7 @@ interface Props {
   userName: string;
   onSubmint: () => void;
   userCredential: UserCredential;
+  isBlocked: boolean;
 }
 
 export const ChatRoom: React.StatelessComponent<Props> = (props) => (
@@ -24,6 +25,7 @@ export const ChatRoom: React.StatelessComponent<Props> = (props) => (
       onChangeUserName={props.onChangeUserName}
       userName={props.userName}
       onSubmint={props.onSubmint}
+      isBlocked={props.isBlocked}
     />
     <RoomTitle />
     <RoomContainer

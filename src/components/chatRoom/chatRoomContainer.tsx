@@ -6,6 +6,7 @@ interface State {
   isFadeout: boolean;
   userName: string;
   userCredential: UserCredential;
+  isBlocked: boolean;
 }
 
 export class ChatRoomContainer extends React.PureComponent<{}, State> {
@@ -13,13 +14,21 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
     isFadeout: false,
     userName: '',
     userCredential: userCedentialDefaultValues(),
+    isBlocked: true,
   };
 
   onChangeUserName = (newUserName: string) => {
     this.setState({
       userName: newUserName,
+      isBlocked: this.isBlockedButton(newUserName),
     });
   }
+
+  isBlockedButton = (newUserName) => (
+    newUserName !== '' ?
+    !this.state.isBlocked :
+    true
+  )
 
   onSubmint = () => {
     this.setState({
@@ -27,7 +36,7 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
         userName: this.state.userName,
       },
       isFadeout: !this.state.isFadeout,
-    })
+    });
   }
 
   render() {
@@ -38,6 +47,7 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
         userName={this.state.userName}
         onSubmint={this.onSubmint}
         userCredential={this.state.userCredential}
+        isBlocked={this.state.isBlocked}
       />
     );
   }

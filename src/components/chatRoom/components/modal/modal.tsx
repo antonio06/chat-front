@@ -6,6 +6,7 @@ interface Props {
   onChangeUserName: (userName: string) => void;
   userName: string;
   onSubmint: () => void;
+  isBlocked: boolean;
 }
 
 export const Modal: React.StatelessComponent<Props> = (props) => (
@@ -19,7 +20,7 @@ export const Modal: React.StatelessComponent<Props> = (props) => (
       onChange={onchangeHandler(props)}
       css={styles.input}
     />
-    <button css={styles.button} onClick={onSubmintHandler(props)}>Conect</button>
+    <button disabled={props.isBlocked} css={styles.button} onClick={onSubmintHandler(props)}>Conect</button>
   </div>
 );
 

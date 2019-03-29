@@ -42,7 +42,7 @@ export const button = css`
   border-bottom-right-radius: ${borderRadiusAmount};
   :focus {
     outline: none;
-  }
+  };
 `;
 
 export const fadeout = css`

@@ -3,13 +3,13 @@ import * as styles from './modal.styles';
 
 interface Props {
   isFadeout: boolean;
-  onChangeUserName: (userName: string) => void;
   userName: string;
-  onSubmint: () => void;
   isBlocked: boolean;
+  onChangeUserName(userName: string): void;
+  onSubmint(): void;
 }
 
-export const Modal: React.StatelessComponent<Props> = (props) => (
+export const Modal: React.FunctionComponent<Props> = (props) => (
   <div css={[
     styles.modal,
     isFadeout(props),

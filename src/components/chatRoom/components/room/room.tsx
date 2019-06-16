@@ -8,11 +8,11 @@ const keyCode = 13;
 interface Props {
   message: string;
   conversations: Conversation[];
-  onChangeMessage: (newMessage: string) => void;
-  onSubmit: () => void;
+  onChangeMessage(newMessage: string): void;
+  onSubmit(): void;
 }
 
-export const Room: React.StatelessComponent<Props> = (props) => (
+export const Room: React.FunctionComponent<Props> = (props) => (
   <form css={styles.room} onKeyPress={sendMessage(props)}>
     <Dashboard
       conversations={props.conversations}

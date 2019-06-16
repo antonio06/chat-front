@@ -4,10 +4,10 @@ import * as styles from './type.styles';
 
 interface Props {
   message: string;
-  onChangeMessage: (newMessage: string) => void;
+  onChangeMessage(newMessage: string): void;
 }
 
-export const Type: React.StatelessComponent<Props> = (props) => (
+export const Type: React.FunctionComponent<Props> = (props) => (
   <div css={styles.type}>
     <TextareaAutosize
       placeholder="Type here something"
@@ -22,4 +22,4 @@ export const Type: React.StatelessComponent<Props> = (props) => (
 
 const onChangeHandler = (props: Props) => (event: React.ChangeEvent<HTMLTextAreaElement>) => {
   props.onChangeMessage(event.target.value);
-}
+};

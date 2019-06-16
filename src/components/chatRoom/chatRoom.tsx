@@ -15,7 +15,7 @@ interface Props {
   isBlocked: boolean;
 }
 
-export const ChatRoom: React.StatelessComponent<Props> = (props) => (
+export const ChatRoom: React.FunctionComponent<Props> = (props) => (
   <div css={styles.chatRoom}>
     <Overlay
       isFadeout={props.isFadeout}

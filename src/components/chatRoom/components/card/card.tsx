@@ -6,7 +6,7 @@ interface Props {
   conversation: Conversation;
 }
 
-export const Card: React.StatelessComponent<Props> = (props) => (
+export const Card: React.FunctionComponent<Props> = (props) => (
   <>
     {
       props.conversation.message &&

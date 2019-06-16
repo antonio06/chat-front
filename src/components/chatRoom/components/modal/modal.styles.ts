@@ -3,43 +3,43 @@ import { theme } from '../../../../theme';
 const borderRadiusAmount = '0.5rem';
 
 export const modal = css`
-  display: flex;
-  flex-direction: column;
-  position: fixed;
   align-self: center;
-  margin-top: 10%;
   background-color: ${theme.colors.modal.background};
   border-radius: 5px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  padding: 5rem;
+  position: fixed;
   text-align: center;
   z-index: 11;
-  border: 1px solid black;
-  padding: 5rem;
 `;
 
 export const input = css`
-  padding: 0.5rem;
-  border-top: none;
   border-left: none;
   border-right: none;
+  border-top: none;
   margin-bottom: 1rem;
+  padding: 0.5rem;
   :focus {
-    outline: none;
     border-bottom-color: ${theme.colors.modal.inputBorder};
+    outline: none;
   }
 `;
 
 export const button = css`
-  padding: 0.5rem;
-  font-size: 1.2rem;
   background-color: ${theme.colors.modal.button};
-  color: white;
-  border: none;
-  font-family: ${theme.fontFamily};
-  font-weight: bold;
-  border-top-left-radius: ${borderRadiusAmount};
   border-bottom-left-radius: ${borderRadiusAmount};
-  border-top-right-radius: ${borderRadiusAmount};
   border-bottom-right-radius: ${borderRadiusAmount};
+  border-top-left-radius: ${borderRadiusAmount};
+  border-top-right-radius: ${borderRadiusAmount};
+  border: none;
+  color: white;
+  font-family: ${theme.fontFamily};
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem;
   :focus {
     outline: none;
   };

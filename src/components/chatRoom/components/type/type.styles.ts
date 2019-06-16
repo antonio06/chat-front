@@ -6,6 +6,6 @@ export const type = css`
 `;
 
 export const textarea = css`
-  resize: none;
   padding: 1rem;
+  resize: none;
 `;

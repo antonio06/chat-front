@@ -6,10 +6,10 @@ export const overlay = css`
   /* Pending to remove when room size its cool */
   /*top: 0;
   left: 0;*/
-  height: 100%;
-  width: 100%;
   background-color: ${theme.colors.overlay.background};
+  height: 100%;
   opacity: 0.5;
+  width: 100%;
   z-index: 10;
 `;
 

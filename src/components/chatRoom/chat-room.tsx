@@ -7,12 +7,12 @@ import { RoomTitle } from './Components/roomTitle';
 import { UserCredential } from './viewModel';
 
 interface Props {
-  isFadeout: boolean;
-  onChangeUserName(newUserName: string): void;
-  userName: string;
-  onSubmint(): void;
-  userCredential: UserCredential;
   isBlocked: boolean;
+  isFadeout: boolean;
+  userCredential: UserCredential;
+  userName: string;
+  onChangeUserName(newUserName: string): void;
+  onSubmint(): void;
 }
 
 export const ChatRoom: React.FunctionComponent<Props> = (props) => (

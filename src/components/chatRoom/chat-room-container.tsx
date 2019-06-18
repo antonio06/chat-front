@@ -3,10 +3,10 @@ import { ChatRoom } from './chat-room';
 import { userCedentialDefaultValues, UserCredential } from './viewModel';
 
 interface State {
-  isFadeout: boolean;
-  userName: string;
-  userCredential: UserCredential;
   isBlocked: boolean;
+  isFadeout: boolean;
+  userCredential: UserCredential;
+  userName: string;
 }
 
 export class ChatRoomContainer extends React.PureComponent<{}, State> {

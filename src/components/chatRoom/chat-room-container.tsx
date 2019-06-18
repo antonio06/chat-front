@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { ChatRoom } from './chatRoom';
-import { UserCredential, userCedentialDefaultValues } from './viewModel';
+import { ChatRoom } from './chat-room';
+import { userCedentialDefaultValues, UserCredential } from './viewModel';
 
 interface State {
   isFadeout: boolean;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as styles from './roomTitle.styles';
+import * as styles from './room-title.styles';
 
 export const RoomTitle: React.FunctionComponent = () => (
   <div css={styles.roomTitle}>

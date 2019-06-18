@@ -6,8 +6,8 @@ import { Conversation } from './viewModel';
 const keyCode = 13;
 
 interface Props {
-  message: string;
   conversations: Conversation[];
+  message: string;
   onChangeMessage(newMessage: string): void;
   onSubmit(): void;
 }

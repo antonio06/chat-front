@@ -1,1 +1,1 @@
-export * from './roomTitle';
+export * from './room-title';

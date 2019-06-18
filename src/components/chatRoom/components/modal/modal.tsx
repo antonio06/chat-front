@@ -2,9 +2,9 @@ import * as React from 'react';
 import * as styles from './modal.styles';
 
 interface Props {
+  isBlocked: boolean;
   isFadeout: boolean;
   userName: string;
-  isBlocked: boolean;
   onChangeUserName(userName: string): void;
   onSubmint(): void;
 }

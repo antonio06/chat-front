@@ -8,4 +8,5 @@ export const type = css`
 export const textarea = css`
   padding: 1rem;
   resize: none;
+  white-space: pre-wrap;
 `;

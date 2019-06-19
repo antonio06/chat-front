@@ -27,5 +27,11 @@ export const Room: React.FunctionComponent<Props> = (props) => (
 const sendMessage = (props: Props) => (event: React.KeyboardEvent<HTMLElement>) => {
   if (event.which === keyCode) {
     props.onSubmit();
+    // resetForm();
   }
 };
+
+/*const resetForm = () => (resetTextAarea: HTMLFormElement) => {
+  resetTextAarea.reset();
+  console.log('reset form');
+};*/

@@ -10,6 +10,7 @@ interface Props {
   message: string;
   onChangeMessage(newMessage: string): void;
   onSubmit(): void;
+  onResetForm(): void;
 }
 
 export const Room: React.FunctionComponent<Props> = (props) => (
@@ -27,11 +28,6 @@ export const Room: React.FunctionComponent<Props> = (props) => (
 const sendMessage = (props: Props) => (event: React.KeyboardEvent<HTMLElement>) => {
   if (event.which === keyCode) {
     props.onSubmit();
-    // resetForm();
+    props.onResetForm();
   }
 };
-
-/*const resetForm = () => (resetTextAarea: HTMLFormElement) => {
-  resetTextAarea.reset();
-  console.log('reset form');
-};*/

@@ -35,9 +35,14 @@ export class RoomContainer extends React.Component<Props, State> {
             user: this.props.userName,
           },
         ],
-        message: '',
       });
     }
+  }
+
+  onResetForm = () => {
+    this.setState({
+      message:  '',
+    });
   }
 
   render() {
@@ -47,6 +52,7 @@ export class RoomContainer extends React.Component<Props, State> {
         conversations={this.state.conversations}
         onChangeMessage={this.onChangeMessage}
         onSubmit={this.onSubmit}
+        onResetForm={this.onResetForm}
       />
     );
   }

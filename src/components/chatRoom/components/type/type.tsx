@@ -16,6 +16,7 @@ export const Type: React.FunctionComponent<Props> = (props) => (
       rows={3}
       cols={100}
       css={styles.textarea}
+      name="message"
     />
   </div>
 );

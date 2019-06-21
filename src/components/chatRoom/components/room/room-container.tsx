@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Room } from './room';
-import { Conversation, defaultConversationValues } from './viewModel';
+import { Conversation } from './viewModel';
 const uuidv4 = require('uuid/v4');
 
 interface Props {
@@ -14,7 +14,7 @@ interface State {
 
 export class RoomContainer extends React.Component<Props, State> {
   state = {
-    conversations: defaultConversationValues(),
+    conversations: [],
     message: '',
   };
 
@@ -35,14 +35,9 @@ export class RoomContainer extends React.Component<Props, State> {
             user: this.props.userName,
           },
         ],
+        message: '',
       });
     }
-  }
-
-  onResetForm = () => {
-    this.setState({
-      message:  '',
-    });
   }
 
   render() {
@@ -52,7 +47,6 @@ export class RoomContainer extends React.Component<Props, State> {
         conversations={this.state.conversations}
         onChangeMessage={this.onChangeMessage}
         onSubmit={this.onSubmit}
-        onResetForm={this.onResetForm}
       />
     );
   }

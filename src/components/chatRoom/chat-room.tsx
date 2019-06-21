@@ -3,7 +3,6 @@ import * as styles from './chat-room.styles';
 import { Modal } from './Components/modal';
 import { Overlay } from './Components/overlay';
 import { RoomContainer } from './Components/room';
-import { RoomTitle } from './Components/roomTitle';
 import { UserCredential } from './viewModel';
 
 interface Props {
@@ -27,7 +26,6 @@ export const ChatRoom: React.FunctionComponent<Props> = (props) => (
       onSubmint={props.onSubmint}
       isBlocked={props.isBlocked}
     />
-    <RoomTitle />
     <RoomContainer
       userName={props.userCredential.userName}
     />

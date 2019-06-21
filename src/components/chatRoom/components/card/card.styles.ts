@@ -26,4 +26,5 @@ export const messageWrapper = css`
 export const message = css`
   font-family: ${theme.fontFamily};
   font-weight: 300;
+  white-space: pre-wrap;
 `;

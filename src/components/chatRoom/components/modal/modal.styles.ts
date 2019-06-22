@@ -39,6 +39,7 @@ export const button = css`
   font-family: ${theme.fontFamily};
   font-size: 1.2rem;
   font-weight: bold;
+  margin-top: 1rem;
   padding: 0.5rem;
   :focus {
     outline: none;
@@ -46,5 +47,14 @@ export const button = css`
 `;
 
 export const fadeout = css`
+  visibility: hidden;
+`;
+
+export const warning = css`
+  font-size: 0.8rem;
+  color: red;
+`;
+
+export const hidden = css`
   visibility: hidden;
 `;

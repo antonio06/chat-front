@@ -21,6 +21,7 @@ export const Modal: React.FunctionComponent<Props> = (props) => {
         onChange={onchangeHandler(props)}
         css={styles.input}
       />
+      <p css={[styles.warning, isHidden(props)]}>The user name is required.</p>
       <button disabled={props.isBlocked} css={styles.button} onClick={onSubmintHandler(props)}>Connect</button>
     </div>
   );
@@ -30,6 +31,12 @@ const isFadeout = (props: Props) => (
   !props.isFadeout ?
     '' :
     styles.fadeout
+);
+
+const isHidden = (props: Props) => (
+  props.isBlocked ?
+    '' :
+    styles.hidden
 );
 
 const onchangeHandler = (props) => (event: React.ChangeEvent<HTMLInputElement>) => (

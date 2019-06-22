@@ -25,7 +25,10 @@ export const theme = {
     },
     modal: {
       background: `${modalColor}`,
-      button: `${modalElements}`,
+      button: {
+        primary: `${modalElements}`,
+        secondary: '#437c80',
+      },
       inputBorder: `${modalElements}`,
     },
   },

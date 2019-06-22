@@ -9,20 +9,22 @@ interface Props {
   onSubmint(): void;
 }
 
-export const Modal: React.FunctionComponent<Props> = (props) => (
-  <div css={[
-    styles.modal,
-    isFadeout(props),
-  ]}>
-    <input
-      placeholder="Type name"
-      value={props.userName}
-      onChange={onchangeHandler(props)}
-      css={styles.input}
-    />
-    <button disabled={props.isBlocked} css={styles.button} onClick={onSubmintHandler(props)}>Conect</button>
-  </div>
-);
+export const Modal: React.FunctionComponent<Props> = (props) => {
+  return (
+    <div css={[
+      styles.modal,
+      isFadeout(props),
+    ]}>
+      <input
+        placeholder="Type name"
+        value={props.userName}
+        onChange={onchangeHandler(props)}
+        css={styles.input}
+      />
+      <button disabled={props.isBlocked} css={styles.button} onClick={onSubmintHandler(props)}>Connect</button>
+    </div>
+  );
+};
 
 const isFadeout = (props: Props) => (
   !props.isFadeout ?

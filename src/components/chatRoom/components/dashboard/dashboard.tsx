@@ -7,15 +7,17 @@ interface Props {
   conversations: Conversation[];
 }
 
-export const Dashboard: React.StatelessComponent<Props> = (props) => (
-  <div css={styles.dashboard}>
-    {
-      props.conversations.map((conversation) =>
-        <Card
-          key={conversation.id}
-          conversation={conversation}
-        />,
-      )
-    }
-  </div>
-);
+export const Dashboard: React.StatelessComponent<Props> = (props) => {
+  return (
+    <div css={styles.dashboard}>
+      {
+        props.conversations.map((conversation) =>
+          <Card
+            key={conversation.id}
+            conversation={conversation}
+          />,
+        )
+      }
+    </div>
+  );
+};

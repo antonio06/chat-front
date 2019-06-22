@@ -14,20 +14,22 @@ interface Props {
   onSubmint(): void;
 }
 
-export const ChatRoom: React.FunctionComponent<Props> = (props) => (
-  <div css={styles.chatRoom}>
-    <Overlay
-      isFadeout={props.isFadeout}
-    />
-    <Modal
-      isFadeout={props.isFadeout}
-      onChangeUserName={props.onChangeUserName}
-      userName={props.userName}
-      onSubmint={props.onSubmint}
-      isBlocked={props.isBlocked}
-    />
-    <RoomContainer
-      userName={props.userCredential.userName}
-    />
-  </div>
-);
+export const ChatRoom: React.FunctionComponent<Props> = (props) => {
+  return (
+    <div css={styles.chatRoom}>
+      <Overlay
+        isFadeout={props.isFadeout}
+      />
+      <Modal
+        isFadeout={props.isFadeout}
+        onChangeUserName={props.onChangeUserName}
+        userName={props.userName}
+        onSubmint={props.onSubmint}
+        isBlocked={props.isBlocked}
+      />
+      <RoomContainer
+        userName={props.userCredential.userName}
+      />
+    </div>
+  );
+};

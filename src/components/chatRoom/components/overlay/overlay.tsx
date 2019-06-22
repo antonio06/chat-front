@@ -5,9 +5,11 @@ interface Props {
   isFadeout: boolean;
 }
 
-export const Overlay: React.FunctionComponent<Props> = (props) => (
-  <div css={[styles.overlay, isFadeout(props)]}></div>
-);
+export const Overlay: React.FunctionComponent<Props> = (props) => {
+  return (
+    <div css={[styles.overlay, isFadeout(props)]}></div>
+  );
+};
 
 const isFadeout = (props: Props) => (
   !props.isFadeout ?

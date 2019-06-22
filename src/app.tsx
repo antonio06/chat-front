@@ -4,16 +4,18 @@ import { ChatRoomContainer } from './components/chatRoom';
 import * as styles from './app.styles';
 import { Global } from '@emotion/core';
 
-let App: React.StatelessComponent = () => (
-  <>
-    <Global
-      styles={
-        styles.resetStyles
-      }
-    />
-    <ChatRoomContainer />
-  </>
-);
+let App: React.StatelessComponent = () => {
+  return (
+    <>
+      <Global
+        styles={
+          styles.resetStyles
+        }
+      />
+      <ChatRoomContainer />
+    </>
+  );
+};
 
 App = hot(module)(App);
 

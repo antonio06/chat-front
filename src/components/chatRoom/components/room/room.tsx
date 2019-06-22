@@ -11,15 +11,17 @@ interface Props {
   onSubmit(): void;
 }
 
-export const Room: React.FunctionComponent<Props> = (props) => (
-  <div css={styles.room}>
-    <Dashboard
-      conversations={props.conversations}
-    />
-    <Type
-      message={props.message}
-      onChangeMessage={props.onChangeMessage}
-      onSubmit={props.onSubmit}
-    />
-  </div>
-);
+export const Room: React.FunctionComponent<Props> = (props) => {
+  return (
+    <div css={styles.room}>
+      <Dashboard
+        conversations={props.conversations}
+      />
+      <Type
+        message={props.message}
+        onChangeMessage={props.onChangeMessage}
+        onSubmit={props.onSubmit}
+      />
+    </div>
+  );
+};

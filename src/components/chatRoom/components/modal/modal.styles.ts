@@ -1,12 +1,11 @@
 import { css } from '@emotion/core';
 import { theme } from '../../../../theme';
-const borderRadiusAmount = '0.5rem';
+const borderRadiusAmount = '1.3rem';
 
 export const modal = css`
   align-self: center;
   background-color: ${theme.colors.modal.background};
   border-radius: 5px;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   margin-top: 10%;
@@ -29,7 +28,8 @@ export const input = css`
 `;
 
 export const button = css`
-  background-color: ${theme.colors.modal.button};
+  background-image: linear-gradient(to top left, ${theme.colors.modal.button.primary},
+   ${theme.colors.modal.button.secondary});
   border-bottom-left-radius: ${borderRadiusAmount};
   border-bottom-right-radius: ${borderRadiusAmount};
   border-top-left-radius: ${borderRadiusAmount};

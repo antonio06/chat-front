@@ -3,9 +3,6 @@ import { theme } from '../../../../theme';
 
 export const overlay = css`
   position: absolute;
-  /* Pending to remove when room size its cool */
-  /*top: 0;
-  left: 0;*/
   background-color: ${theme.colors.overlay.background};
   height: 100%;
   opacity: 0.5;

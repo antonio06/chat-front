@@ -6,4 +6,5 @@ export const dashboard = css`
   flex-grow: 1;
   padding-left: 2rem;
   padding-right: 2rem;
+  overflow-y: auto;
 `;

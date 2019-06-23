@@ -1,9 +1,10 @@
 import * as React from 'react';
 import * as styles from './modal.styles';
+import { Overlay } from '../../Components/overlay';
 
 interface Props {
   isBlocked: boolean;
-  isFadeout: boolean;
+  showModal: boolean;
   userName: string;
   onChangeUserName(userName: string): void;
   onSubmint(): void;
@@ -11,24 +12,29 @@ interface Props {
 
 export const Modal: React.FunctionComponent<Props> = (props) => {
   return (
-    <div css={[
-      styles.modal,
-      isFadeout(props),
-    ]}>
-      <input
-        placeholder="Type name"
-        value={props.userName}
-        onChange={onchangeHandler(props)}
-        css={styles.input}
+    <>
+      <Overlay
+        showModal={showModal(props)}
       />
-      <p css={[styles.warning, isHidden(props)]}>The user name is required.</p>
-      <button disabled={props.isBlocked} css={styles.button} onClick={onSubmintHandler(props)}>Connect</button>
-    </div>
+      <div css={[
+        styles.modal,
+        showModal(props),
+      ]}>
+        <input
+          placeholder="Type name"
+          value={props.userName}
+          onChange={onchangeHandler(props)}
+          css={styles.input}
+        />
+        <p css={[styles.warning, isHidden(props)]}>The user name is required.</p>
+        <button disabled={props.isBlocked} css={styles.button} onClick={onSubmintHandler(props)}>Connect</button>
+      </div>
+    </>
   );
 };
 
-const isFadeout = (props: Props) => (
-  !props.isFadeout ?
+const showModal = (props: Props) => (
+  !props.showModal ?
     '' :
     styles.fadeout
 );

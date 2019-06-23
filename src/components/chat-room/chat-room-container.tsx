@@ -4,14 +4,14 @@ import { userCedentialDefaultValues, UserCredential } from './view-model';
 
 interface State {
   isBlocked: boolean;
-  isFadeout: boolean;
+  showModal: boolean;
   userCredential: UserCredential;
   userName: string;
 }
 
 export class ChatRoomContainer extends React.PureComponent<{}, State> {
   state = {
-    isFadeout: false,
+    showModal: false,
     userName: '',
     userCredential: userCedentialDefaultValues(),
     isBlocked: true,
@@ -33,14 +33,14 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
       userCredential: {
         userName: this.state.userName,
       },
-      isFadeout: !this.state.isFadeout,
+      showModal: !this.state.showModal,
     });
   }
 
   render() {
     return (
       <ChatRoom
-        isFadeout={this.state.isFadeout}
+        showModal={this.state.showModal}
         onChangeUserName={this.onChangeUserName}
         userName={this.state.userName}
         onSubmint={this.onSubmint}

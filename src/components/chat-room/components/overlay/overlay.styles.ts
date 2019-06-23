@@ -9,7 +9,3 @@ export const overlay = css`
   width: 100%;
   z-index: 10;
 `;
-
-export const fadeout = css`
-  visibility: hidden;
-`;

@@ -22,7 +22,7 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
   }
 
   isBlockedButton = (newUserName: string) => (
-    newUserName !== '' ? false : true
+    newUserName === ''
   )
 
   onSubmit = () => {

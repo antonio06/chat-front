@@ -7,7 +7,7 @@ interface Props {
   conversation: Message[];
 }
 
-export const Messages: React.StatelessComponent<Props> = (props) => {
+export const Messages: React.FunctionComponent<Props> = (props) => {
   return (
     <div css={styles.messages}>
       {

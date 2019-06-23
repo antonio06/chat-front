@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Dashboard } from '../dashboard';
+import { Messages } from '../messages';
 import { TextBox } from '../text-box';
 import * as styles from './room.styles';
 import { Conversation } from './view-model';
@@ -11,13 +11,10 @@ interface Props {
   onSubmit(): void;
 }
 
-// Conversation | Messages
-// Type | TextBox/ChatBox
-
 export const Room: React.FunctionComponent<Props> = (props) => {
   return (
     <div css={styles.room}>
-      <Dashboard
+      <Messages
         conversation={props.conversation}
       />
       <TextBox

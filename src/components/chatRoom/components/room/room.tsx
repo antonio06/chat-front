@@ -5,17 +5,20 @@ import * as styles from './room.styles';
 import { Conversation } from './viewModel';
 
 interface Props {
-  conversations: Conversation[];
+  conversation: Conversation[];
   message: string;
   onChangeMessage(newMessage: string): void;
   onSubmit(): void;
 }
 
+// Conversation | Messages
+// Type | TextBox/ChatBox
+
 export const Room: React.FunctionComponent<Props> = (props) => {
   return (
     <div css={styles.room}>
       <Dashboard
-        conversations={props.conversations}
+        conversation={props.conversation}
       />
       <Type
         message={props.message}

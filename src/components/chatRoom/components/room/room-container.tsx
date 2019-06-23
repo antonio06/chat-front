@@ -44,7 +44,7 @@ export class RoomContainer extends React.Component<Props, State> {
     return (
       <Room
         message={this.state.message}
-        conversations={this.state.conversations}
+        conversation={this.state.conversations}
         onChangeMessage={this.onChangeMessage}
         onSubmit={this.onSubmit}
       />

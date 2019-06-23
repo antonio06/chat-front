@@ -1,6 +1,4 @@
 require('typeface-quattrocento-sans');
-const headerColor = '#f0f5f5';
-const boldColor = '#727272';
 const roomColor = '#e8f2f3';
 const cardColor = '#fefffd';
 const overlayColor = '#989898';
@@ -10,10 +8,6 @@ const modalElements = '#84babf';
 export const theme = {
   fontFamily: 'Quattrocento Sans',
   colors: {
-    headerChat: {
-      background: `${headerColor}`,
-      title: `${boldColor}`,
-    },
     room: {
       background: `${roomColor}`,
     },

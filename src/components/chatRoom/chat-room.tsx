@@ -14,6 +14,7 @@ interface Props {
   onSubmint(): void;
 }
 
+// TODO: Move Overlay Component into the Modal
 export const ChatRoom: React.FunctionComponent<Props> = (props) => {
   return (
     <div css={styles.chatRoom}>

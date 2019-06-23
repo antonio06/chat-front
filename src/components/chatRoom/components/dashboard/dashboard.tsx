@@ -4,17 +4,17 @@ import { Conversation } from '../room/viewModel';
 import * as styles from './dashboard.style';
 
 interface Props {
-  conversations: Conversation[];
+  conversation: Conversation[];
 }
 
 export const Dashboard: React.StatelessComponent<Props> = (props) => {
   return (
     <div css={styles.dashboard}>
       {
-        props.conversations.map((conversation) =>
+        props.conversation.map((message) =>
           <Card
-            key={conversation.id}
-            conversation={conversation}
+            key={message.id}
+            conversation={message}
           />,
         )
       }

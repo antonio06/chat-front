@@ -1,6 +1,5 @@
 import { css } from '@emotion/core';
 import { theme } from '../../../../theme';
-const radiusAmount = '6px';
 
 export const card = css`
   margin-bottom: 1rem;
@@ -15,10 +14,7 @@ export const user = css`
 
 export const messageWrapper = css`
   background-color: ${theme.colors.card.background};
-  border-bottom-left-radius: ${radiusAmount};
-  border-bottom-right-radius: ${radiusAmount};
-  border-top-left-radius: ${radiusAmount};
-  border-top-right-radius: ${radiusAmount};
+  border-bottom: '6px';
   display: inline-flex;
   padding: 1.5rem;
 `;

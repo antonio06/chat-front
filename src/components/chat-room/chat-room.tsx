@@ -3,7 +3,7 @@ import * as styles from './chat-room.styles';
 import { Modal } from './Components/modal';
 import { Overlay } from './Components/overlay';
 import { RoomContainer } from './Components/room';
-import { UserCredential } from './viewModel';
+import { UserCredential } from './view-model';
 
 interface Props {
   isBlocked: boolean;

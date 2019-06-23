@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Room } from './room';
-import { Conversation } from './viewModel';
+import { Conversation } from './view-model';
 const uuidv4 = require('uuid/v4');
 
 interface Props {

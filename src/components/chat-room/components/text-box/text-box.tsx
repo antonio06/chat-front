@@ -1,6 +1,6 @@
 import * as React from 'react';
 import TextareaAutosize from 'react-autosize-textarea';
-import * as styles from './type.styles';
+import * as styles from './text-box.styles';
 
 interface Props {
   message: string;
@@ -8,7 +8,7 @@ interface Props {
   onSubmit(): void;
 }
 
-export const Type: React.FunctionComponent<Props> = ({ message, onChangeMessage, onSubmit }) => {
+export const TextBox: React.FunctionComponent<Props> = ({ message, onChangeMessage, onSubmit }) => {
   const onChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     onChangeMessage(event.target.value);
   };
@@ -21,7 +21,7 @@ export const Type: React.FunctionComponent<Props> = ({ message, onChangeMessage,
   };
 
   return (
-    <div css={styles.type}>
+    <div css={styles.textBox}>
       <TextareaAutosize
         placeholder="Type here something"
         onChange={onChange}

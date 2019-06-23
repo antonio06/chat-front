@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Card } from '../card';
-import { Conversation } from '../room/viewModel';
+import { Conversation } from '../room/view-model';
 import * as styles from './dashboard.style';
 
 interface Props {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ChatRoom } from './chat-room';
-import { userCedentialDefaultValues, UserCredential } from './viewModel';
+import { userCedentialDefaultValues, UserCredential } from './view-model';
 
 interface State {
   isBlocked: boolean;

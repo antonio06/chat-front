@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Dashboard } from '../dashboard';
-import { Type } from '../type';
+import { TextBox } from '../text-box';
 import * as styles from './room.styles';
-import { Conversation } from './viewModel';
+import { Conversation } from './view-model';
 
 interface Props {
   conversation: Conversation[];
@@ -20,7 +20,7 @@ export const Room: React.FunctionComponent<Props> = (props) => {
       <Dashboard
         conversation={props.conversation}
       />
-      <Type
+      <TextBox
         message={props.message}
         onChangeMessage={props.onChangeMessage}
         onSubmit={props.onSubmit}

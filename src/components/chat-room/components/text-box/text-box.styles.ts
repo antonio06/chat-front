@@ -1,6 +1,6 @@
 import { css } from '@emotion/core';
 
-export const type = css`
+export const textBox = css`
   margin-left: auto;
   margin-right: auto;
 `;

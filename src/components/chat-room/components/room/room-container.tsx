@@ -31,7 +31,7 @@ export class RoomContainer extends React.Component<Props, State> {
           ...this.state.conversation,
           {
             id: uuidv4(),
-            message: this.state.message,
+            text: this.state.message,
             user: this.props.userName,
           },
         ],

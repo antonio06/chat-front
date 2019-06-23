@@ -14,7 +14,7 @@ export const Messages: React.StatelessComponent<Props> = (props) => {
         props.conversation.map((message) =>
           <Card
             key={message.id}
-            conversation={message}
+            message={message}
           />,
         )
       }

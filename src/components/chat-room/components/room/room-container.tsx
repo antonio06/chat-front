@@ -9,12 +9,12 @@ interface Props {
 
 interface State {
   message: string;
-  conversations: Conversation[];
+  conversation: Conversation[];
 }
 
 export class RoomContainer extends React.Component<Props, State> {
   state = {
-    conversations: [],
+    conversation: [],
     message: '',
   };
 
@@ -27,8 +27,8 @@ export class RoomContainer extends React.Component<Props, State> {
   onSubmit = () => {
     if (this.state.message !== '') {
       this.setState({
-        conversations: [
-          ...this.state.conversations,
+        conversation: [
+          ...this.state.conversation,
           {
             id: uuidv4(),
             message: this.state.message,
@@ -44,7 +44,7 @@ export class RoomContainer extends React.Component<Props, State> {
     return (
       <Room
         message={this.state.message}
-        conversation={this.state.conversations}
+        conversation={this.state.conversation}
         onChangeMessage={this.onChangeMessage}
         onSubmit={this.onSubmit}
       />

@@ -1,11 +1,9 @@
 import * as React from 'react';
 import { ChatRoom } from './chat-room';
-import { userCedentialDefaultValues, UserCredential } from './view-model';
 
 interface State {
   isBlocked: boolean;
   showModal: boolean;
-  userCredential: UserCredential;
   userName: string;
 }
 
@@ -13,7 +11,6 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
   state = {
     showModal: false,
     userName: '',
-    userCredential: userCedentialDefaultValues(),
     isBlocked: true,
   };
 
@@ -30,9 +27,7 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
 
   onSubmit = () => {
     this.setState({
-      userCredential: {
-        userName: this.state.userName,
-      },
+      userName: this.state.userName,
       showModal: !this.state.showModal,
     });
   }
@@ -44,7 +39,6 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
         onChangeUserName={this.onChangeUserName}
         userName={this.state.userName}
         onSubmit={this.onSubmit}
-        userCredential={this.state.userCredential}
         isBlocked={this.state.isBlocked}
       />
     );

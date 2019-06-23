@@ -28,7 +28,7 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
     newUserName !== '' ? false : true
   )
 
-  onSubmint = () => {
+  onSubmit = () => {
     this.setState({
       userCredential: {
         userName: this.state.userName,
@@ -43,7 +43,7 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
         showModal={this.state.showModal}
         onChangeUserName={this.onChangeUserName}
         userName={this.state.userName}
-        onSubmint={this.onSubmint}
+        onSubmit={this.onSubmit}
         userCredential={this.state.userCredential}
         isBlocked={this.state.isBlocked}
       />

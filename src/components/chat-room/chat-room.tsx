@@ -10,7 +10,7 @@ interface Props {
   userCredential: UserCredential;
   userName: string;
   onChangeUserName(newUserName: string): void;
-  onSubmint(): void;
+  onSubmit(): void;
 }
 
 export const ChatRoom: React.FunctionComponent<Props> = (props) => {
@@ -20,7 +20,7 @@ export const ChatRoom: React.FunctionComponent<Props> = (props) => {
         showModal={props.showModal}
         onChangeUserName={props.onChangeUserName}
         userName={props.userName}
-        onSubmint={props.onSubmint}
+        onSubmit={props.onSubmit}
         isBlocked={props.isBlocked}
       />
       <RoomContainer

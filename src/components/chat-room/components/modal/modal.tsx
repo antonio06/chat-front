@@ -7,7 +7,7 @@ interface Props {
   showModal: boolean;
   userName: string;
   onChangeUserName(userName: string): void;
-  onSubmint(): void;
+  onSubmit(): void;
 }
 
 export const Modal: React.FunctionComponent<Props> = (props) => {
@@ -50,8 +50,8 @@ const onchangeHandler = (props) => (event: React.ChangeEvent<HTMLInputElement>) 
 );
 
 const onSubmintHandler = (props: Props) => (event: React.MouseEvent<HTMLButtonElement>) => {
-  if (props.onSubmint) {
+  if (props.onSubmit) {
     event.preventDefault();
-    props.onSubmint();
+    props.onSubmit();
   }
 };

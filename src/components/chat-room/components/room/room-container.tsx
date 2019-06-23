@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Room } from './room';
-import { Conversation } from './view-model';
+import { Message } from './view-model';
 const uuidv4 = require('uuid/v4');
 
 interface Props {
@@ -9,7 +9,7 @@ interface Props {
 
 interface State {
   message: string;
-  conversation: Conversation[];
+  conversation: Message[];
 }
 
 export class RoomContainer extends React.Component<Props, State> {

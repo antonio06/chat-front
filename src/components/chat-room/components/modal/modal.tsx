@@ -4,7 +4,7 @@ import { Overlay } from '../../Components/overlay';
 
 interface Props {
   isBlocked: boolean;
-  showModal: boolean;
+  isOpen: boolean;
   userName: string;
   onChangeUserName(userName: string): void;
   onSubmit(): void;
@@ -34,7 +34,7 @@ export const Modal: React.FunctionComponent<Props> = (props) => {
 };
 
 const showModal = (props: Props) => (
-  !props.showModal ?
+  !props.isOpen ?
     '' :
     styles.fadeout
 );

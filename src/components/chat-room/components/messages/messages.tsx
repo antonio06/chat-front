@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Card } from '../card';
-import { Conversation } from '../room/view-model';
+import { Message } from '../room/view-model';
 import * as styles from './message.style';
 
 interface Props {
-  conversation: Conversation[];
+  conversation: Message[];
 }
 
 export const Messages: React.StatelessComponent<Props> = (props) => {

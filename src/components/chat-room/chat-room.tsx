@@ -15,7 +15,7 @@ export const ChatRoom: React.FunctionComponent<Props> = (props) => {
   return (
     <div css={styles.chatRoom}>
       <Modal
-        showModal={props.showModal}
+        isOpen={props.showModal}
         onChangeUserName={props.onChangeUserName}
         userName={props.userName}
         onSubmit={props.onSubmit}

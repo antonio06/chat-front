@@ -1,6 +1,6 @@
 import * as React from 'react';
-import * as styles from './modal.styles';
 import { Overlay } from '../../Components/overlay';
+import * as styles from './modal.styles';
 
 interface Props {
   isBlocked: boolean;

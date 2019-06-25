@@ -1,6 +1,6 @@
+import { SerializedStyles } from '@emotion/css';
 import * as React from 'react';
 import * as styles from './overlay.styles';
-import { SerializedStyles } from '@emotion/css';
 
 interface Props {
   showModal: string | SerializedStyles;

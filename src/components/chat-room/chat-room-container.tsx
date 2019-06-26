@@ -2,7 +2,7 @@ import * as React from 'react';
 import { ChatRoom } from './chat-room';
 
 interface State {
-  isBlocked: boolean;
+  isBlockedButton: boolean;
   showModal: boolean;
   userName: string;
 }
@@ -11,13 +11,13 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
   state = {
     showModal: false,
     userName: '',
-    isBlocked: true,
+    isBlockedButton: true,
   };
 
   onChangeUserName = (newUserName: string) => {
     this.setState({
       userName: newUserName,
-      isBlocked: this.isBlockedButton(newUserName),
+      isBlockedButton: this.isBlockedButton(newUserName),
     });
   }
 
@@ -25,7 +25,7 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
     newUserName === ''
   )
 
-  onSubmit = () => {
+  onSubmitModalInput = () => {
     this.setState({
       userName: this.state.userName,
       showModal: !this.state.showModal,
@@ -38,8 +38,8 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
         showModal={this.state.showModal}
         onChangeUserName={this.onChangeUserName}
         userName={this.state.userName}
-        onSubmit={this.onSubmit}
-        isBlocked={this.state.isBlocked}
+        onSubmitModalInput={this.onSubmitModalInput}
+        isBlockedButton={this.state.isBlockedButton}
       />
     );
   }

@@ -42,10 +42,6 @@ export const button = css`
   };
 `;
 
-export const fadeout = css`
-  visibility: hidden;
-`;
-
 export const warning = css`
   color: red;
   font-size: 0.8rem;

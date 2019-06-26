@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-import { theme } from '../../../../theme';
+import { theme } from '../../../../../../theme';
 
 export const overlay = css`
   background-color: ${theme.colors.overlay.background};

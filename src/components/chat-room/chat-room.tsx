@@ -4,11 +4,11 @@ import { Modal } from './Components/modal';
 import { RoomContainer } from './Components/room';
 
 interface Props {
-  isBlocked: boolean;
+  isBlockedButton: boolean;
   showModal: boolean;
   userName: string;
   onChangeUserName(newUserName: string): void;
-  onSubmit(): void;
+  onSubmitModalInput(): void;
 }
 
 export const ChatRoom: React.FunctionComponent<Props> = (props) => {
@@ -18,8 +18,8 @@ export const ChatRoom: React.FunctionComponent<Props> = (props) => {
         isOpen={props.showModal}
         onChangeUserName={props.onChangeUserName}
         userName={props.userName}
-        onSubmit={props.onSubmit}
-        isBlocked={props.isBlocked}
+        onSubmitModalInput={props.onSubmitModalInput}
+        isBlockedButton={props.isBlockedButton}
       />
       <RoomContainer
         userName={props.userName}

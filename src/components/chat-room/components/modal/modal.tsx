@@ -1,24 +1,24 @@
 import * as React from 'react';
-import { Overlay } from '../../Components/overlay';
+import { Overlay } from './component/overlay';
 import * as styles from './modal.styles';
 
 interface Props {
-  isBlocked: boolean;
+  isBlockedButton: boolean;
   isOpen: boolean;
   userName: string;
   onChangeUserName(userName: string): void;
-  onSubmit(): void;
+  onSubmitModalInput(): void;
 }
 
 export const Modal: React.FunctionComponent<Props> = (props) => {
   return (
     <>
       <Overlay
-        showModal={showModal(props)}
+        showOverlay={isShowElement(props)}
       />
       <div css={[
         styles.modal,
-        showModal(props),
+        isShowElement(props),
       ]}>
         <input
           placeholder="Type name"
@@ -27,20 +27,20 @@ export const Modal: React.FunctionComponent<Props> = (props) => {
           css={styles.input}
         />
         <p css={[styles.warning, isHidden(props)]}>The user name is required.</p>
-        <button disabled={props.isBlocked} css={styles.button} onClick={onSubmintHandler(props)}>Connect</button>
+        <button disabled={props.isBlockedButton} css={styles.button} onClick={onSubmintHandler(props)}>Connect</button>
       </div>
     </>
   );
 };
 
-const showModal = (props: Props) => (
+const isShowElement = (props: Props) => (
   !props.isOpen ?
     '' :
-    styles.fadeout
+    styles.hidden
 );
 
 const isHidden = (props: Props) => (
-  props.isBlocked ?
+  props.isBlockedButton ?
     '' :
     styles.hidden
 );
@@ -50,8 +50,8 @@ const onchangeHandler = (props) => (event: React.ChangeEvent<HTMLInputElement>) 
 );
 
 const onSubmintHandler = (props: Props) => (event: React.MouseEvent<HTMLButtonElement>) => {
-  if (props.onSubmit) {
+  if (props.onSubmitModalInput) {
     event.preventDefault();
-    props.onSubmit();
+    props.onSubmitModalInput();
   }
 };

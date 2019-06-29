@@ -8,7 +8,7 @@ interface Props {
   conversation: ChatMessage[];
   message: string;
   onChangeMessage(newMessage: string): void;
-  onSubmit(): void;
+  onSubmitMessage(): void;
 }
 
 export const Room: React.FunctionComponent<Props> = (props) => {
@@ -20,7 +20,7 @@ export const Room: React.FunctionComponent<Props> = (props) => {
       <TextBox
         message={props.message}
         onChangeMessage={props.onChangeMessage}
-        onSubmit={props.onSubmit}
+        onSubmitMessage={props.onSubmitMessage}
       />
     </div>
   );

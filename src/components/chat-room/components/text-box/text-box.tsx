@@ -5,10 +5,10 @@ import * as styles from './text-box.styles';
 interface Props {
   message: string;
   onChangeMessage(newMessage: string): void;
-  onSubmit(): void;
+  onSubmitMessage(): void;
 }
 
-export const TextBox: React.FunctionComponent<Props> = ({ message, onChangeMessage, onSubmit }) => {
+export const TextBox: React.FunctionComponent<Props> = ({ message, onChangeMessage, onSubmitMessage: onSubmit }) => {
   const onChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
     onChangeMessage(event.target.value);
   };

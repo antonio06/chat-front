@@ -24,7 +24,7 @@ export class RoomContainer extends React.Component<Props, State> {
     });
   }
 
-  onSubmit = () => {
+  onSubmitMessage = () => {
     if (this.state.message !== '') {
       this.setState({
         conversation: [
@@ -46,7 +46,7 @@ export class RoomContainer extends React.Component<Props, State> {
         message={this.state.message}
         conversation={this.state.conversation}
         onChangeMessage={this.onChangeMessage}
-        onSubmit={this.onSubmit}
+        onSubmitMessage={this.onSubmitMessage}
       />
     );
   }

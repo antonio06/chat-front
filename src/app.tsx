@@ -1,15 +1,13 @@
+import { Global } from '@emotion/core';
 import * as React from 'react';
 import { hot } from 'react-hot-loader';
-import { ChatRoomContainer } from './components/chat-room';
 import * as styles from './app.styles';
-import { Global } from '@emotion/core';
+import { ChatRoomContainer } from './components/chat-room';
 
 let App: React.StatelessComponent = () => {
   return (
     <>
-      <Global
-        styles={styles.resetStyles}
-      />
+      <Global styles={styles.resetStyles} />
       <ChatRoomContainer />
     </>
   );

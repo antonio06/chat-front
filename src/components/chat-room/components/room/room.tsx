@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Messages } from '../messages';
+import { Conversation } from '../conversation';
 import { TextBox } from '../text-box';
 import * as styles from './room.styles';
-import { Message } from './view-model';
+import { ChatMessage } from './view-model';
 
 interface Props {
-  conversation: Message[];
+  conversation: ChatMessage[];
   message: string;
   onChangeMessage(newMessage: string): void;
   onSubmit(): void;
@@ -14,7 +14,7 @@ interface Props {
 export const Room: React.FunctionComponent<Props> = (props) => {
   return (
     <div css={styles.room}>
-      <Messages
+      <Conversation
         conversation={props.conversation}
       />
       <TextBox

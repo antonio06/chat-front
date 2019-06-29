@@ -1,6 +1,6 @@
 import { css } from '@emotion/core';
 
-export const messages = css`
+export const conversation = css`
   display: flex;
   flex-direction: column;
   flex-grow: 1;

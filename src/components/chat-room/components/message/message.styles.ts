@@ -1,7 +1,7 @@
 import { css } from '@emotion/core';
 import { theme } from '../../../../theme';
 
-export const card = css`
+export const message = css`
   margin-bottom: 1rem;
   margin-top: 1rem;
 `;
@@ -12,14 +12,14 @@ export const user = css`
   padding-bottom: 1rem;
 `;
 
-export const messageWrapper = css`
-  background-color: ${theme.colors.card.background};
+export const textWrapper = css`
+  background-color: ${theme.colors.message.background};
   border-bottom: 6px;
   display: inline-flex;
   padding: 1.5rem;
 `;
 
-export const message = css`
+export const text = css`
   font-family: ${theme.fontFamily};
   font-weight: 300;
   white-space: pre-wrap;

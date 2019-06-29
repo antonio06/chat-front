@@ -1,6 +1,6 @@
 require('typeface-quattrocento-sans');
 const roomColor = '#e8f2f3';
-const cardColor = '#fefffd';
+const messageColor = '#fefffd';
 const overlayColor = '#989898';
 const modalColor = '#ffffff';
 const modalElements = '#84babf';
@@ -11,8 +11,8 @@ export const theme = {
     room: {
       background: `${roomColor}`,
     },
-    card: {
-      background: `${cardColor}`,
+    message: {
+      background: `${messageColor}`,
     },
     overlay: {
       background: `${overlayColor}`,

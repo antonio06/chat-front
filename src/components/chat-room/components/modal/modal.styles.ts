@@ -42,11 +42,7 @@ export const button = css`
   };
 `;
 
-export const warning = css`
+export const error = css`
   color: red;
   font-size: 0.8rem;
-`;
-
-export const hidden = css`
-  visibility: hidden;
 `;

@@ -3,55 +3,45 @@ import { Overlay } from './component/overlay';
 import * as styles from './modal.styles';
 
 interface Props {
-  isBlockedButton: boolean;
+  isUserNameValid: boolean;
   isOpen: boolean;
   userName: string;
   onChangeUserName(userName: string): void;
-  onSubmitModalInput(): void;
+  onSubmitUserName(): void;
 }
 
 export const Modal: React.FunctionComponent<Props> = (props) => {
+  if (props.isOpen) {
+    return null;
+  }
+
   return (
     <>
-      <Overlay
-        showOverlay={isShowElement(props)}
-      />
-      <div css={[
-        styles.modal,
-        isShowElement(props),
-      ]}>
+      <Overlay />
+      <div css={styles.modal}>
         <input
           placeholder="Type name"
           value={props.userName}
           onChange={onchangeHandler(props)}
           css={styles.input}
         />
-        <p css={[styles.warning, isHidden(props)]}>The user name is required.</p>
-        <button disabled={props.isBlockedButton} css={styles.button} onClick={onSubmintHandler(props)}>Connect</button>
+        {
+          props.isUserNameValid &&
+          <p css={styles.error}>The user name is required.</p>
+        }
+        <button disabled={props.isUserNameValid} css={styles.button} onClick={onSubmitHandler(props)}>Connect</button>
       </div>
     </>
   );
 };
 
-const isShowElement = (props: Props) => (
-  !props.isOpen ?
-    '' :
-    styles.hidden
-);
-
-const isHidden = (props: Props) => (
-  props.isBlockedButton ?
-    '' :
-    styles.hidden
-);
-
-const onchangeHandler = (props) => (event: React.ChangeEvent<HTMLInputElement>) => (
+const onchangeHandler = (props: Props) => (event: React.ChangeEvent<HTMLInputElement>) => (
   props.onChangeUserName(event.target.value)
 );
 
-const onSubmintHandler = (props: Props) => (event: React.MouseEvent<HTMLButtonElement>) => {
-  if (props.onSubmitModalInput) {
+const onSubmitHandler = (props: Props) => (event: React.MouseEvent<HTMLButtonElement>) => {
+  if (props.onSubmitUserName) {
     event.preventDefault();
-    props.onSubmitModalInput();
+    props.onSubmitUserName();
   }
 };

@@ -1,14 +1,14 @@
 import * as React from 'react';
 import * as styles from './chat-room.styles';
-import { Modal } from './Components/modal';
-import { RoomContainer } from './Components/room';
+import { Modal } from './components/modal';
+import { RoomContainer } from './components/room';
 
 interface Props {
-  isBlockedButton: boolean;
+  isUserNameValid: boolean;
   showModal: boolean;
   userName: string;
   onChangeUserName(newUserName: string): void;
-  onSubmitModalInput(): void;
+  onSubmitUserName(): void;
 }
 
 export const ChatRoom: React.FunctionComponent<Props> = (props) => {
@@ -18,8 +18,8 @@ export const ChatRoom: React.FunctionComponent<Props> = (props) => {
         isOpen={props.showModal}
         onChangeUserName={props.onChangeUserName}
         userName={props.userName}
-        onSubmitModalInput={props.onSubmitModalInput}
-        isBlockedButton={props.isBlockedButton}
+        onSubmitUserName={props.onSubmitUserName}
+        isUserNameValid={props.isUserNameValid}
       />
       <RoomContainer
         userName={props.userName}

@@ -14,7 +14,7 @@ export const user = css`
 
 export const messageWrapper = css`
   background-color: ${theme.colors.card.background};
-  border-bottom: '6px';
+  border-bottom: 6px;
   display: inline-flex;
   padding: 1.5rem;
 `;

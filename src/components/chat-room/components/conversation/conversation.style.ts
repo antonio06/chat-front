@@ -5,6 +5,5 @@ export const conversation = css`
   flex-direction: column;
   flex-grow: 1;
   overflow-y: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 2rem;
 `;

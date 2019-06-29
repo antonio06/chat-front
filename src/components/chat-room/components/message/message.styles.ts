@@ -9,7 +9,7 @@ export const message = css`
 export const user = css`
   font-family: ${theme.fontFamily};
   font-weight: 900;
-  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 `;
 
 export const textWrapper = css`

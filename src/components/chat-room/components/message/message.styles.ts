@@ -2,7 +2,7 @@ import { css } from '@emotion/core';
 import { theme } from '../../../../theme';
 
 export const message = css`
-  &:not(:last-child) {
+  :not(:last-child) {
     margin-bottom: 1rem;
   }
 `;

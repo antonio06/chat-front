@@ -26,10 +26,10 @@ export const Modal: React.FunctionComponent<Props> = (props) => {
           css={styles.input}
         />
         {
-          props.isUserNameValid &&
+          !props.isUserNameValid &&
           <p css={styles.error}>The user name is required.</p>
         }
-        <button disabled={props.isUserNameValid} css={styles.button} onClick={onSubmitHandler(props)}>Connect</button>
+        <button disabled={!props.isUserNameValid} css={styles.button} onClick={onSubmitHandler(props)}>Connect</button>
       </div>
     </>
   );

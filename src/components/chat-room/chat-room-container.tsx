@@ -11,7 +11,7 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
   state = {
     showModal: false,
     userName: '',
-    isUserNameValid: true,
+    isUserNameValid: false,
   };
 
   onChangeUserName = (newUserName: string) => {
@@ -22,7 +22,7 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
   }
 
   isUserNameValid = (newUserName: string) => (
-    newUserName === ''
+    newUserName !== ''
   )
 
   onSubmitUserName = () => {

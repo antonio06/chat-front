@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "allowJs": false,
-    "allowSyntheticDefaultImports": false,
+    "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": true,
     "allowUnusedLabels": true,
     "alwaysStrict": true,
@@ -17,10 +17,10 @@
     "inlineSourceMap": false,
     "inlineSources": false,
     "isolatedModules": false,
-    "jsx": "react",
+    "jsx": "preserve",
     "lib": [
       "dom",
-      "es2017"
+      "esnext"
     ],
     "listEmittedFiles": true,
     "listFiles": true,
@@ -41,6 +41,11 @@
     "noResolve": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "plugins": [
+      {
+        "name": "typescript-tslint-plugin"
+      }
+    ],
     "preserveConstEnums": false,
     "pretty": true,
     "reactNamespace": "React",

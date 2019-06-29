@@ -2,19 +2,18 @@ const merge = require('webpack-merge');
 const common = require('./webpack.config.common');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const WebappWebpackPlugin = require('webapp-webpack-plugin');
 const { resolveFromRootPath } = require('../helpers');
 
 module.exports = merge(common, {
   context: resolveFromRootPath('src'),
   entry: {
-    app: [
-      './index.tsx',
-    ],
+    app: './index.tsx',
   },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.(t|j)sx?$/,
         exclude: /node_modules/,
         use: [
           {
@@ -22,8 +21,13 @@ module.exports = merge(common, {
             options: {
               cacheDirectory: true,
             },
-          }
-        ]
+          },
+        ],
+      },
+      {
+        test: /\.css$/,
+        include: /node_modules/,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },

@@ -8,9 +8,7 @@ let App: React.StatelessComponent = () => {
   return (
     <>
       <Global
-        styles={
-          styles.resetStyles
-        }
+        styles={styles.resetStyles}
       />
       <ChatRoomContainer />
     </>

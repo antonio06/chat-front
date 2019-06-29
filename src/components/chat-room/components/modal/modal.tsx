@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Overlay } from './component/overlay';
 import * as styles from './modal.styles';
 
 interface Props {
@@ -17,7 +16,7 @@ export const Modal: React.FunctionComponent<Props> = (props) => {
 
   return (
     <>
-      <Overlay />
+      <div css={styles.overlay}></div>
       <div css={styles.modal}>
         <input
           placeholder="Type name"

@@ -2,9 +2,7 @@ const urlLoaderOptions = (mimetype, limit = 1e4) => ({ limit, mimetype });
 
 module.exports = {
   resolve: {
-    extensions: ['.js', '.ts', '.tsx'],
-    // TODO: Add code example folder as alias
-    // alias: {},
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   module: {
     rules: [

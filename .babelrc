@@ -10,19 +10,38 @@
         "useBuiltIns": "usage"
       }
     ],
+    [
+      "@emotion/babel-preset-css-prop",
+      {
+        "sourceMap": true,
+        "labelFormat": "[filename]__[local]"
+      }
+    ],
     "@babel/preset-react",
     "@babel/preset-typescript"
   ],
   "plugins": [
-    "react-hot-loader/babel",
     [
-      "emotion",
+      "@wordpress/babel-plugin-import-jsx-pragma",
       {
-        "sourceMap": true,
-        "autoLabel": true
+        "scopeVariable": "jsx",
+        "source": "@emotion/core",
+        "isDefault": false,
       }
     ],
-    "@babel/proposal-class-properties",
+    [
+      "@babel/transform-react-jsx",
+      {
+        "pragma": "jsx",
+        "pragmaFrag": "React.Fragment"
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
     "@babel/proposal-object-rest-spread",
     [
       "@babel/plugin-proposal-decorators",

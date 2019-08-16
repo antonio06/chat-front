@@ -1,14 +1,20 @@
 import { User } from '../models';
 import { urls } from './urls';
 
-// https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
-
-export const addUser = async (userName: string) => {
+const addUser = async (userName: string): Promise<User> => {
   const response = await fetch(urls.addUser, {
+    mode: 'cors',
     method: 'POST',
-    body: userName,
+    body: JSON.stringify({ userName }),
     headers: {
       'Content-Type': 'application/json',
+      Accept: 'application/json',
     },
   });
+
+  return response.json();
+};
+
+export const userApi = {
+  addUser,
 };

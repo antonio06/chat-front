@@ -1,3 +1,4 @@
+import io from 'socket.io-client';
 import { User } from '../models';
 import { urls } from './urls';
 
@@ -14,6 +15,10 @@ const addUser = async (userName: string): Promise<User> => {
 
   return response.json();
 };
+
+const socket = io(urls.basUrl, {
+
+});
 
 export const userApi = {
   addUser,

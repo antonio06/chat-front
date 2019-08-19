@@ -1,7 +1,7 @@
-import { User, ApiError } from '../models';
+import { User, ApiError, ErrorMessage } from '../models';
 import { urls } from './urls';
 
-const addUser = async (userName: string): Promise<User | string> => {
+const addUser = async (userName: string): Promise<User | ErrorMessage> => {
   const response = await fetch(urls.addUser, {
     mode: 'cors',
     method: 'POST',

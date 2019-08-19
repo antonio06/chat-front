@@ -4,9 +4,9 @@ import { Modal } from './components/modal';
 import { RoomContainer } from './components/room';
 
 interface Props {
-  isUserNameValid: boolean;
   showModal: boolean;
   userName: string;
+  errorMessage: string;
   onChangeUserName(newUserName: string): void;
   onSubmitUserName(): void;
 }
@@ -19,7 +19,7 @@ export const ChatRoom: React.FunctionComponent<Props> = (props) => {
         onChangeUserName={props.onChangeUserName}
         userName={props.userName}
         onSubmitUserName={props.onSubmitUserName}
-        isUserNameValid={props.isUserNameValid}
+        errorMessage={props.errorMessage}
       />
       <RoomContainer
         userName={props.userName}

@@ -1,10 +1,9 @@
 import * as React from 'react';
 import * as styles from './modal.styles';
-
 interface Props {
-  isUserNameValid: boolean;
   isOpen: boolean;
   userName: string;
+  errorMessage: string;
   onChangeUserName(userName: string): void;
   onSubmitUserName(): void;
 }
@@ -13,6 +12,8 @@ export const Modal: React.FunctionComponent<Props> = (props) => {
   if (props.isOpen) {
     return null;
   }
+
+  const hasError = Boolean(props.errorMessage);
 
   return (
     <>
@@ -25,10 +26,10 @@ export const Modal: React.FunctionComponent<Props> = (props) => {
           css={styles.input}
         />
         {
-          !props.isUserNameValid &&
-          <p css={styles.error}>The user name is required.</p>
+          hasError &&
+          <p css={styles.error}>{props.errorMessage}</p>
         }
-        <button disabled={!props.isUserNameValid} css={styles.button} onClick={onSubmitHandler(props)}>Connect</button>
+        <button css={styles.button} onClick={onSubmitHandler(props)}>Connect</button>
       </div>
     </>
   );

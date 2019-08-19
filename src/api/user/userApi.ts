@@ -1,4 +1,4 @@
-import { User } from '../models';
+import { User, ApiError } from '../models';
 import { urls } from './urls';
 
 const addUser = async (userName: string): Promise<User | string> => {
@@ -15,7 +15,7 @@ const addUser = async (userName: string): Promise<User | string> => {
   if (response.ok) {
     return response.json();
   } else {
-    const error: Error = await response.json();
+    const { error }: ApiError = await response.json();
 
     return error.message;
   }

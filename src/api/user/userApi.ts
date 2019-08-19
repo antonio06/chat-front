@@ -1,8 +1,7 @@
-import io from 'socket.io-client';
 import { User } from '../models';
 import { urls } from './urls';
 
-const addUser = async (userName: string): Promise<User> => {
+const addUser = async (userName: string): Promise<User | string> => {
   const response = await fetch(urls.addUser, {
     mode: 'cors',
     method: 'POST',
@@ -13,12 +12,14 @@ const addUser = async (userName: string): Promise<User> => {
     },
   });
 
-  return response.json();
+  if (response.ok) {
+    return response.json();
+  } else {
+    const error: Error = await response.json();
+
+    return error.message;
+  }
 };
-
-const socket = io(urls.basUrl, {
-
-});
 
 export const userApi = {
   addUser,

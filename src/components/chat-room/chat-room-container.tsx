@@ -44,9 +44,9 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
   }
 
   onSubmitUserName = () => {
-    /*this.setState({
+    this.setState({
       errorMessage: '',
-    });*/
+    });
     userApi.addUser(this.state.userName).then((currentUser) => {
       if (typeof currentUser !== 'string') {
         this.setState({

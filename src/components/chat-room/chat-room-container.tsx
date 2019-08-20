@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { ChatRoom } from './chat-room';
-import { userApi } from '../../api/user/userApi';
 import { socketService } from '../../api/socket';
+import { userApi } from '../../api/user/userApi';
+import { ChatRoom } from './chat-room';
 import { getErrorMessageFromApiError } from './errorServices';
+import { User } from './viewModel';
 
 interface State {
   showModal: boolean;

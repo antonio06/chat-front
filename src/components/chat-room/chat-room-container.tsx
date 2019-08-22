@@ -3,7 +3,7 @@ import { socketService } from '../../api/socket';
 import { userApi } from '../../api/user/userApi';
 import { ChatRoom } from './chat-room';
 import { getErrorMessageFromApiError } from './errorServices';
-import { User } from './viewModel';
+import { User } from '../../api/models';
 
 interface State {
   showModal: boolean;

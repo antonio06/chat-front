@@ -1,19 +1,14 @@
 import { ErrorMessage } from '../../api/models';
 
-const errorMessages = {
-  notValidUsername: 'not-valid-username',
-  useralreadyExists: 'user-already-exists',
-};
-
 export const getErrorMessageFromApiError = (apiError: ErrorMessage): string => {
   switch (apiError) {
-    case errorMessages.notValidUsername:
+    case 'not-valid-username':
       return 'The user name is not valid';
       break;
-    case errorMessages.useralreadyExists:
+    case 'user-already-exists':
       return 'The user already exists';
       break;
     default:
-      return '';
+      return 'Oops!! one error has ocurred';
   }
 };

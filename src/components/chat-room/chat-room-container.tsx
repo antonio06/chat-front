@@ -1,34 +1,79 @@
 import * as React from 'react';
+import { socketService } from '../../api/socket';
+import { userApi } from '../../api/user/userApi';
 import { ChatRoom } from './chat-room';
+import { getErrorMessageFromApiError } from './errorServices';
+import { User } from '../../api/models';
 
 interface State {
-  isUserNameValid: boolean;
   showModal: boolean;
   userName: string;
+  onlineUsers: User[];
+  currentUser: User | null;
+  errorMessage: string;
 }
 
 export class ChatRoomContainer extends React.PureComponent<{}, State> {
-  state = {
-    showModal: false,
-    userName: '',
-    isUserNameValid: false,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: false,
+      userName: '',
+      onlineUsers: [],
+      currentUser: null,
+      errorMessage: '',
+    };
+  }
+
+  componentWillUnmount() {
+    const socket = socketService.getSocket();
+
+    if (socket) {
+      socket.off(socketService.events.loggedUser);
+    }
+  }
 
   onChangeUserName = (newUserName: string) => {
     this.setState({
       userName: newUserName,
-      isUserNameValid: this.isUserNameValid(newUserName),
+      errorMessage: this.getUserNameError(newUserName),
     });
   }
 
-  isUserNameValid = (newUserName: string) => (
-    newUserName !== ''
-  )
+  getUserNameError = (newUserName: string): string => {
+    return newUserName === '' ? 'The username is required' : '';
+  }
 
   onSubmitUserName = () => {
     this.setState({
-      userName: this.state.userName,
-      showModal: !this.state.showModal,
+      errorMessage: '',
+    });
+
+    this.addUser();
+  }
+
+  addUser = () => {
+    userApi.addUser(this.state.userName).then((currentUser) => {
+      if (typeof currentUser !== 'string') {
+        this.setState({
+          currentUser,
+          showModal: !this.state.showModal,
+        });
+
+        socketService.establishConnection(currentUser.id);
+        const socket = socketService.getSocket();
+        if (socket) {
+          socket.on(socketService.events.loggedUser, (user: User) => {
+            this.setState({
+              onlineUsers: [...this.state.onlineUsers, user],
+            });
+          });
+        }
+      } else {
+        this.setState({
+          errorMessage: getErrorMessageFromApiError(currentUser),
+        });
+      }
     });
   }
 
@@ -39,7 +84,7 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
         onChangeUserName={this.onChangeUserName}
         userName={this.state.userName}
         onSubmitUserName={this.onSubmitUserName}
-        isUserNameValid={this.state.isUserNameValid}
+        errorMessage={this.state.errorMessage}
       />
     );
   }

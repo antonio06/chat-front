@@ -2,10 +2,10 @@ import * as React from 'react';
 import { Conversation } from '../conversation';
 import { TextBox } from '../text-box';
 import * as styles from './room.styles';
-import { ChatMessage } from './view-model';
+import { Message } from './view-model';
 
 interface Props {
-  conversation: ChatMessage[];
+  conversation: Message[];
   message: string;
   onChangeMessage(newMessage: string): void;
   onSubmitMessage(): void;

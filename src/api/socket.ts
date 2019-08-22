@@ -8,9 +8,9 @@ const events = {
   disconnect: 'disconnect',
   loggedUser: 'loggedUser',
   addMessage: 'addMessage',
-  sendMessage: 'sendMessage',
   errorAddMessage: 'errorAddMessage',
   successAddMessage: 'successAddMessage',
+  onConnected: 'onConnected',
 };
 
 const establishConnection = (userId: string) => {

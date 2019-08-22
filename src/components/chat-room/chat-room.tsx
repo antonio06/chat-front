@@ -2,11 +2,14 @@ import * as React from 'react';
 import * as styles from './chat-room.styles';
 import { Modal } from './components/modal';
 import { RoomContainer } from './components/room';
+import { User } from '../../api/models';
 
 interface Props {
   showModal: boolean;
+  user: User | null;
   userName: string;
   errorMessage: string;
+  onlineUsers: User[];
   onChangeUserName(newUserName: string): void;
   onSubmitUserName(): void;
 }
@@ -22,7 +25,8 @@ export const ChatRoom: React.FunctionComponent<Props> = (props) => {
         errorMessage={props.errorMessage}
       />
       <RoomContainer
-        userName={props.userName}
+        user={props.user}
+        onlineUsers={props.onlineUsers}
       />
     </div>
   );

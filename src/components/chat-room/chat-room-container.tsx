@@ -2,7 +2,7 @@ import * as React from 'react';
 import { socketService } from '../../api/socket';
 import { userApi } from '../../api/user/userApi';
 import { ChatRoom } from './chat-room';
-import { getErrorMessageFromApiError } from './errorServices';
+import { getErrorMessageFromApiError } from './error-service';
 import { User } from '../../api/models';
 
 interface State {
@@ -30,6 +30,7 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
 
     if (socket) {
       socket.off(socketService.events.loggedUser);
+      socket.off(socketService.events.onConnected);
     }
   }
 
@@ -68,6 +69,12 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
               onlineUsers: [...this.state.onlineUsers, user],
             });
           });
+
+          socket.on(socketService.events.onConnected, ({ users }: { users: User[] }) => {
+            this.setState({
+              onlineUsers: users,
+            });
+          });
         }
       } else {
         this.setState({
@@ -82,9 +89,11 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
       <ChatRoom
         showModal={this.state.showModal}
         onChangeUserName={this.onChangeUserName}
+        user={this.state.currentUser}
         userName={this.state.userName}
         onSubmitUserName={this.onSubmitUserName}
         errorMessage={this.state.errorMessage}
+        onlineUsers={this.state.onlineUsers}
       />
     );
   }

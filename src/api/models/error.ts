@@ -9,3 +9,7 @@ export interface ApiError {
     message: ErrorMessage;
   };
 }
+
+export interface ApiSocketError {
+  message: ErrorMessage;
+}

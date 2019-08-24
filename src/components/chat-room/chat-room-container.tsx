@@ -1,9 +1,10 @@
 import * as React from 'react';
-import { socketService } from '../../api/socket';
+import { events } from '../../api';
+import { User } from '../../api/models';
 import { userApi } from '../../api/user/userApi';
+import { SocketContext } from '../../socket';
 import { ChatRoom } from './chat-room';
 import { getErrorMessageFromApiError } from './error-service';
-import { User } from '../../api/models';
 
 interface State {
   showModal: boolean;
@@ -14,6 +15,10 @@ interface State {
 }
 
 export class ChatRoomContainer extends React.PureComponent<{}, State> {
+
+  static contextType = SocketContext;
+  context!: React.ContextType<typeof SocketContext>;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -26,11 +31,11 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
   }
 
   componentWillUnmount() {
-    const socket = socketService.getSocket();
+    const { socket } = this.context;
 
     if (socket) {
-      socket.off(socketService.events.loggedUser);
-      socket.off(socketService.events.onConnected);
+      socket.off(events.loggedUser);
+      socket.off(events.onConnected);
     }
   }
 
@@ -61,16 +66,16 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
           showModal: !this.state.showModal,
         });
 
-        socketService.establishConnection(currentUser.id);
-        const socket = socketService.getSocket();
+        const { establishConnection } = this.context;
+        const socket = establishConnection(currentUser.id);
         if (socket) {
-          socket.on(socketService.events.loggedUser, (user: User) => {
+          socket.on(events.loggedUser, (user: User) => {
             this.setState({
               onlineUsers: [...this.state.onlineUsers, user],
             });
           });
 
-          socket.on(socketService.events.onConnected, ({ users }: { users: User[] }) => {
+          socket.on(events.onConnected, ({ users }: { users: User[] }) => {
             this.setState({
               onlineUsers: users,
             });

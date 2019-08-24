@@ -3,12 +3,15 @@ import * as React from 'react';
 import { hot } from 'react-hot-loader';
 import * as styles from './app.styles';
 import { ChatRoomContainer } from './components/chat-room';
+import { SocketProvider } from './socket';
 
 let App: React.StatelessComponent = () => {
   return (
     <>
       <Global styles={styles.resetStyles} />
-      <ChatRoomContainer />
+      <SocketProvider>
+        <ChatRoomContainer />
+      </SocketProvider>
     </>
   );
 };

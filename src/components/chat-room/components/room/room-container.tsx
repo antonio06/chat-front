@@ -1,10 +1,10 @@
 import * as React from 'react';
-import { Room } from './room';
-import { User, Message as ApiMessage, ApiError } from '../../../../api/models';
-import { Message } from './view-model';
-import { socketService } from '../../../../api/socket';
-import { getErrorMessageFromApiError } from '../../error-service';
+import { Message as ApiMessage, User } from '../../../../api/models';
+import { events } from '../../../../api/socket-events';
+import { SocketContext } from '../../../../socket';
 import { mapMessageToVm } from './mappers';
+import { Room } from './room';
+import { Message } from './view-model';
 
 interface Props {
   user: User | null;
@@ -14,50 +14,42 @@ interface Props {
 interface State {
   message: string;
   conversation: Message[];
-  errorMessage: string;
 }
 
 export class RoomContainer extends React.Component<Props, State> {
+  static contextType = SocketContext;
+  context!: React.ContextType<typeof SocketContext>;
+  isSubscribed = false;
+
   constructor(props) {
     super(props);
     this.state = {
       conversation: [],
       message: '',
-      errorMessage: '',
     };
   }
 
   componentWillUnmount() {
-    const socket = socketService.getSocket();
+    const { socket } = this.context;
 
-    if (socket) {
-      socket.off(socketService.events.successAddMessage);
-      socket.off(socketService.events.errorAddMessage);
+    if (socket && this.isSubscribed) {
+      socket.off(events.onNewMessage);
     }
   }
 
-  componentDidUpdate({ user }: Props) {
-    // TODO: Refactor socket service to use react context
-    setTimeout(() => {
-      const socket = socketService.getSocket();
-      if (user === null && this.props.user && socket) {
-        socket.on(socketService.events.successAddMessage, this.onSuccessMessage);
-        socket.on(socketService.events.errorAddMessage, this.onErrorMessage);
-      }
-    }, 100);
+  componentDidUpdate() {
+    const { socket } = this.context;
+    if (socket && !this.isSubscribed) {
+      socket.on(events.onNewMessage, this.onNewMessage);
+      this.isSubscribed = true;
+    }
   }
 
-  onSuccessMessage = (message: ApiMessage) => {
+  onNewMessage = (message: ApiMessage) => {
     const user = this.props.onlineUsers.find(({ id }) => id === message.userId) || null;
-
     this.setState({
       conversation: [...this.state.conversation, mapMessageToVm(message, user)],
     });
-  }
-
-  onErrorMessage = ({ error: { message } }: ApiError) => {
-    const errorMessage = getErrorMessageFromApiError(message);
-    this.setState({ errorMessage });
   }
 
   onChangeMessage = (message: string) => {
@@ -65,16 +57,19 @@ export class RoomContainer extends React.Component<Props, State> {
   }
 
   isValidMessage(message: string) {
-    return message !== '';
+    return message.trim() !== '';
   }
 
   onSubmitMessage = () => {
-    const socket = socketService.getSocket();
+    const { socket } = this.context;
     if (this.isValidMessage(this.state.message) && socket && this.props.user) {
 
-      socket.emit(socketService.events.addMessage, {
+      socket.emit(events.sendMessage, {
         userId: this.props.user.id,
         text: this.state.message,
+      });
+      this.setState({
+        message: '',
       });
     }
   }

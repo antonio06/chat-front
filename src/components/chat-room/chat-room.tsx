@@ -1,8 +1,8 @@
 import * as React from 'react';
+import { User } from '../../api/models';
 import * as styles from './chat-room.styles';
 import { Modal } from './components/modal';
 import { RoomContainer } from './components/room';
-import { User } from '../../api/models';
 
 interface Props {
   showModal: boolean;

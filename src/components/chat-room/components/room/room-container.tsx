@@ -16,7 +16,7 @@ interface State {
   conversation: Message[];
 }
 
-export class RoomContainer extends React.Component<Props, State> {
+export class RoomContainer extends React.PureComponent<Props, State> {
   static contextType = SocketContext;
   context!: React.ContextType<typeof SocketContext>;
   isSubscribed = false;

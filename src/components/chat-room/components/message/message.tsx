@@ -1,18 +1,18 @@
 import * as React from 'react';
-import * as styles from './message.styles';
-import { Message as MessageEntity } from '../room/view-model';
 import { User } from '../../../../api/models';
+import { Message as MessageEntity } from '../room/view-model';
+import * as styles from './message.styles';
 
 interface Props {
   message: MessageEntity;
 }
 
-export const Message: React.FunctionComponent<Props> = ({ message }) => {
+export const Message: React.FunctionComponent<Props> = ({ message: {text, user} }) => {
   return (
     <div css={styles.message}>
-      <h3 css={styles.user}>{getUserName(message.user)}</h3>
+      <h3 css={styles.user}>{getUserName(user)}</h3>
       <div css={styles.textWrapper}>
-        <p css={styles.text}>{message.text}</p>
+        <p css={styles.text}>{text}</p>
       </div>
     </div>
   );

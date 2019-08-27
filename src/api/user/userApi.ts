@@ -1,4 +1,4 @@
-import { User, ApiError, ErrorMessage } from '../models';
+import { ApiError, ErrorMessage, User } from '../models';
 import { urls } from './urls';
 
 const addUser = async (userName: string): Promise<User | ErrorMessage> => {

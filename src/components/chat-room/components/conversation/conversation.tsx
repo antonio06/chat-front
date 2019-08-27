@@ -1,22 +1,22 @@
 import * as React from 'react';
 import { Message } from '../message';
-import { ChatMessage } from '../room/view-model';
+import { Message as MessageEntity } from '../room/view-model';
 import * as styles from './conversation.style';
 
 interface Props {
-  conversation: ChatMessage[];
+  conversation: MessageEntity[];
 }
 
-export const Conversation: React.FunctionComponent<Props> = (props) => {
+export const Conversation: React.FunctionComponent<Props> = ({conversation}) => {
   return (
     <div css={styles.conversation}>
       {
-        props.conversation.map((message) =>
+        conversation.map((message) => (
           <Message
             key={message.id}
             message={message}
-          />,
-        )
+          />
+        ))
       }
     </div>
   );

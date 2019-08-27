@@ -7,6 +7,9 @@ export const message = css`
   }
 `;
 
+export const myMessage = css`
+`;
+
 export const user = css`
   font-family: ${theme.fontFamily};
   font-weight: 900;
@@ -14,7 +17,7 @@ export const user = css`
 `;
 
 export const textWrapper = css`
-  background-color: ${theme.colors.conversation.background};
+  background-color: ${theme.colors.conversation.otherMessage};
   display: inline-flex;
   padding: 1.5rem;
 `;

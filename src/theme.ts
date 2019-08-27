@@ -4,6 +4,8 @@ const messageColor = '#fefffd';
 const overlayColor = '#989898';
 const modalColor = '#ffffff';
 const modalElements = '#84babf';
+const myMessageColor = '#75a7e3';
+const othersMessageUserColor = '##ffffff';
 
 export const theme = {
   fontFamily: 'Quattrocento Sans',
@@ -11,8 +13,12 @@ export const theme = {
     room: {
       background: `${roomColor}`,
     },
-    message: {
+    conversation: {
       background: `${messageColor}`,
+      message: {
+        myMessage: `${myMessageColor}`,
+        otherMessage: `${othersMessageUserColor}`,
+      },
     },
     overlay: {
       background: `${overlayColor}`,

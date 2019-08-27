@@ -14,7 +14,7 @@ export const user = css`
 `;
 
 export const textWrapper = css`
-  background-color: ${theme.colors.message.background};
+  background-color: ${theme.colors.conversation.background};
   display: inline-flex;
   padding: 1.5rem;
 `;

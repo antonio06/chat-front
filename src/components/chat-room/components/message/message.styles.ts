@@ -8,6 +8,12 @@ export const message = css`
 `;
 
 export const myMessage = css`
+  align-self: flex-end;
+  background-color: ${theme.colors.conversation.myMessage};
+`;
+
+export const otherMessage = css`
+  background-color: ${theme.colors.conversation.otherMessage};
 `;
 
 export const user = css`

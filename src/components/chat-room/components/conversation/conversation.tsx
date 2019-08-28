@@ -5,9 +5,10 @@ import * as styles from './conversation.style';
 
 interface Props {
   conversation: MessageEntity[];
+  myUserId: string;
 }
 
-export const Conversation: React.FunctionComponent<Props> = ({conversation}) => {
+export const Conversation: React.FunctionComponent<Props> = ({conversation, myUserId}) => {
   return (
     <div css={styles.conversation}>
       {
@@ -15,6 +16,7 @@ export const Conversation: React.FunctionComponent<Props> = ({conversation}) => 
           <Message
             key={message.id}
             message={message}
+            myUserId={myUserId}
           />
         ))
       }

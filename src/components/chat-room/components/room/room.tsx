@@ -7,6 +7,7 @@ import { Message } from './view-model';
 interface Props {
   conversation: Message[];
   message: string;
+  myUserId: string;
   onChangeMessage(newMessage: string): void;
   onSubmitMessage(): void;
 }
@@ -16,6 +17,7 @@ export const Room: React.FunctionComponent<Props> = (props) => {
     <div css={styles.room}>
       <Conversation
         conversation={props.conversation}
+        myUserId={props.myUserId}
       />
       <TextBox
         message={props.message}

@@ -9,11 +9,18 @@ export const message = css`
 
 export const myMessage = css`
   align-self: flex-end;
-  background-color: ${theme.colors.conversation.myMessage};
+  div:first-of-type {
+    background-color: ${theme.colors.conversation.myMessage};
+    color: white;
+    font-size: 1.5rem;
+  }
 `;
 
 export const otherMessage = css`
-  background-color: ${theme.colors.conversation.otherMessage};
+  div:first-of-type {
+    background-color: ${theme.colors.conversation.otherMessage};
+    font-size: 1.5rem;
+  }
 `;
 
 export const user = css`

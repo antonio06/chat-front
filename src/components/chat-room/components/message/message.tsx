@@ -9,11 +9,11 @@ interface Props {
   myUserId: string;
 }
 
-export const Message: React.FunctionComponent<Props> = ({ message: { text, user } }, props) => {
+export const Message: React.FunctionComponent<Props> = ({ message: { text, user }, myUserId }) => {
   return (
     <div css={[
       styles.message,
-      isMyMessage(props.myUserId, user),
+      isMyMessage(myUserId, user),
     ]}>
       <h3 css={styles.user}>{getUserName(user)}</h3>
       <div css={styles.textWrapper}>

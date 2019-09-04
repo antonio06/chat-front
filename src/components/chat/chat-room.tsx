@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { User } from '../../api/models';
-import * as styles from './chat-room.styles';
+import * as styles from './chat.styles';
 import { Modal } from './components/modal';
 import { RoomContainer } from './components/room';
 
@@ -14,9 +14,9 @@ interface Props {
   onSubmitUserName(): void;
 }
 
-export const ChatRoom: React.FunctionComponent<Props> = (props) => {
+export const Chat: React.FunctionComponent<Props> = (props) => {
   return (
-    <div css={styles.chatRoom}>
+    <div css={styles.chat}>
       <Modal
         isOpen={props.showModal}
         onChangeUserName={props.onChangeUserName}

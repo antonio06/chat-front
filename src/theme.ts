@@ -3,7 +3,7 @@ const roomColor = '#e8f2f3';
 const messageColor = '#fefffd';
 const overlayColor = '#989898';
 const modalColor = '#ffffff';
-const modalElements = '#84babf';
+const modalElements = '#75a7e3';
 const myMessageColor = '#75a7e3';
 
 export const theme = {
@@ -22,8 +22,8 @@ export const theme = {
     modal: {
       background: `${modalColor}`,
       button: {
-        primary: `${modalElements}`,
-        secondary: '#437c80',
+        primary: `#75a7e3`,
+        secondary: '#e8f2f3',
       },
       inputBorder: `${modalElements}`,
     },

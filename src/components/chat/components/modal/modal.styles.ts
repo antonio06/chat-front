@@ -30,6 +30,7 @@ export const input = css`
   margin-bottom: 1rem;
   padding: 0.5rem;
   :focus {
+    box-shadow: 0 8px 6px -6px #e8f2f3;
     border-bottom-color: ${theme.colors.modal.inputBorder};
     outline: none;
   }

@@ -8,9 +8,6 @@ const ownMessage = '#099AFF';
 
 export const theme = {
   fontFamily: 'Quattrocento Sans',
-  mediaquery: {
-    mediunDevice: `${768}px`,
-  },
   colors: {
     room: {
       background: `${mainChatColor}`,

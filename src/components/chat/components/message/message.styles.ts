@@ -12,14 +12,14 @@ export const myMessage = css`
   div:first-of-type {
     background-color: ${theme.colors.conversation.myMessage};
     color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 `;
 
 export const otherMessage = css`
   div:first-of-type {
     background-color: ${theme.colors.conversation.otherMessage};
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 `;
 

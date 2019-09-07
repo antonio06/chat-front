@@ -2,7 +2,7 @@ import { Global } from '@emotion/core';
 import * as React from 'react';
 import { hot } from 'react-hot-loader';
 import * as styles from './app.styles';
-import { ChatRoomContainer } from './components/chat-room';
+import { ChatContainer } from './components/chat';
 import { SocketProvider } from './socket';
 
 let App: React.StatelessComponent = () => {
@@ -10,7 +10,7 @@ let App: React.StatelessComponent = () => {
     <>
       <Global styles={styles.resetStyles} />
       <SocketProvider>
-        <ChatRoomContainer />
+        <ChatContainer />
       </SocketProvider>
     </>
   );

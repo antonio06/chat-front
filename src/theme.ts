@@ -1,20 +1,23 @@
 require('typeface-quattrocento-sans');
-const roomColor = '#e8f2f3';
-const messageColor = '#fefffd';
+const mainChatColor = '#ECF1F5';
+const otherMessage = '#FEFFFD';
 const overlayColor = '#989898';
-const modalColor = '#ffffff';
-const modalElements = '#75a7e3';
-const myMessageColor = '#75a7e3';
+const modalColor = '#FFFFFF';
+const modalElements = '#75A7E3';
+const ownMessage = '#099AFF';
 
 export const theme = {
   fontFamily: 'Quattrocento Sans',
+  mediaquery: {
+    mediunDevice: `${768}px`,
+  },
   colors: {
     room: {
-      background: `${roomColor}`,
+      background: `${mainChatColor}`,
     },
     conversation: {
-      myMessage: `${myMessageColor}`,
-      otherMessage: `${messageColor}`,
+      myMessage: `${ownMessage}`,
+      otherMessage: `${otherMessage}`,
     },
     overlay: {
       background: `${overlayColor}`,
@@ -22,8 +25,8 @@ export const theme = {
     modal: {
       background: `${modalColor}`,
       button: {
-        primary: `#75a7e3`,
-        secondary: '#e8f2f3',
+        primary: `${ownMessage}`,
+        secondary: `${mainChatColor}`,
       },
       inputBorder: `${modalElements}`,
     },

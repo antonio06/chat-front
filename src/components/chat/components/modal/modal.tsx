@@ -1,5 +1,7 @@
 import * as React from 'react';
 import * as styles from './modal.styles';
+import { useSpring, animated } from 'react-spring';
+
 interface Props {
   isOpen: boolean;
   userName: string;
@@ -14,11 +16,16 @@ export const Modal: React.FunctionComponent<Props> = (props) => {
   }
 
   const hasError = Boolean(props.errorMessage);
+  const springProps = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+    config: { duration: 5000 },
+  });
 
   return (
     <>
       <div css={styles.overlay}></div>
-      <div css={styles.modal}>
+      <animated.div style={springProps} css={styles.modal}>
         <input
           placeholder="Type name"
           value={props.userName}
@@ -30,7 +37,7 @@ export const Modal: React.FunctionComponent<Props> = (props) => {
           <p css={styles.error}>{props.errorMessage}</p>
         }
         <button css={styles.button} onClick={onSubmitHandler(props)}>Connect</button>
-      </div>
+      </animated.div>
     </>
   );
 };

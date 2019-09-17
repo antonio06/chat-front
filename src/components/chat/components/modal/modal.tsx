@@ -1,6 +1,6 @@
 import * as React from 'react';
+import { animated, useSpring } from 'react-spring';
 import * as styles from './modal.styles';
-import { useSpring, animated } from 'react-spring';
 
 interface Props {
   isOpen: boolean;
@@ -17,9 +17,9 @@ export const Modal: React.FunctionComponent<Props> = (props) => {
 
   const hasError = Boolean(props.errorMessage);
   const springProps = useSpring({
-    opacity: 1,
-    from: { opacity: 0 },
-    config: { duration: 5000 },
+    from: { transform: 'translateX(-50em)' },
+    to: { transform: 'translateX(0em)' },
+    config: { duration: 2000 },
   });
 
   return (

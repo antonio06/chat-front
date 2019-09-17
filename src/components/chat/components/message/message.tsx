@@ -1,8 +1,9 @@
+import { SerializedStyles } from '@emotion/css';
 import * as React from 'react';
+import { animated, useSpring } from 'react-spring';
 import { User } from '../../../../api/models';
 import { Message as MessageEntity } from '../room/view-model';
 import * as styles from './message.styles';
-import { SerializedStyles } from '@emotion/css';
 
 interface Props {
   message: MessageEntity;
@@ -10,8 +11,14 @@ interface Props {
 }
 
 export const Message: React.FunctionComponent<Props> = ({ message: { text, user }, myUserId }) => {
+  const springProps = useSpring({
+    from: { opacity: 0 },
+    to: { opacity: 1 },
+    config: { duration: 2000 },
+  });
+
   return (
-    <div css={[
+    <animated.div style={springProps} css={[
       styles.message,
       isMyMessage(myUserId, user),
     ]}>
@@ -19,7 +26,7 @@ export const Message: React.FunctionComponent<Props> = ({ message: { text, user 
       <div css={styles.textWrapper}>
         <p css={styles.text}>{text}</p>
       </div>
-    </div>
+    </animated.div>
   );
 };
 

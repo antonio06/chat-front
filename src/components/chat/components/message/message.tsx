@@ -14,7 +14,6 @@ export const Message: React.FunctionComponent<Props> = ({ message: { text, user 
   const springProps = useSpring({
     from: { opacity: 0 },
     to: { opacity: 1 },
-    config: { duration: 2000 },
   });
 
   return (

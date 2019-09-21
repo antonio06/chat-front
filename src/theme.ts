@@ -1,7 +1,7 @@
 require('typeface-quattrocento-sans');
 const mainChatColor = '#ECF1F5';
 const otherMessage = '#FEFFFD';
-const overlayColor = '#989898';
+const overlayColor = 'rgba(0, 0, 0, 0.5)';
 const modalColor = '#FFFFFF';
 const modalElements = '#75A7E3';
 const ownMessage = '#099AFF';

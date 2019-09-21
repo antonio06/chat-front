@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { animated, useSpring } from 'react-spring';
+import { animated, useTransition } from 'react-spring';
 import * as styles from './modal.styles';
 
 interface Props {
@@ -11,33 +11,36 @@ interface Props {
 }
 
 export const Modal: React.FunctionComponent<Props> = (props) => {
-  if (props.isOpen) {
-    return null;
-  }
 
   const hasError = Boolean(props.errorMessage);
-  const springProps = useSpring({
-    from: { transform: 'translateX(-50em)' },
-    to: { transform: 'translateX(0em)' },
-    config: { duration: 2000 },
+
+  const animation = useTransition(props.isOpen, null, {
+    from: { transform: 'translateX(-100vw)', opacity: 0 },
+    enter: { transform: 'translateX(0)', opacity: 1 },
+    leave: { transform: 'translateX(100vw)', opacity: 0 },
   });
 
   return (
     <>
-      <div css={styles.overlay}></div>
-      <animated.div style={springProps} css={styles.modal}>
-        <input
-          placeholder="Type name"
-          value={props.userName}
-          onChange={onchangeHandler(props)}
-          css={styles.input}
-        />
-        {
-          hasError &&
-          <p css={styles.error}>{props.errorMessage}</p>
-        }
-        <button css={styles.button} onClick={onSubmitHandler(props)}>Connect</button>
-      </animated.div>
+      {animation.map(({ item, key, props: {transform, opacity} }) => (
+        item &&
+        <React.Fragment key={key}>
+          <animated.div css={styles.overlay} style={{opacity}}/>
+          <animated.div css={styles.modal} style={{transform}}>
+            <input
+              placeholder="Type name"
+              value={props.userName}
+              onChange={onchangeHandler(props)}
+              css={styles.input}
+            />
+            {
+              hasError &&
+              <p css={styles.error}>{props.errorMessage}</p>
+            }
+            <button css={styles.button} onClick={onSubmitHandler(props)}>Connect</button>
+          </animated.div>
+        </React.Fragment>
+      ))}
     </>
   );
 };

@@ -22,7 +22,7 @@ export class ChatContainer extends React.PureComponent<{}, State> {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: false,
+      showModal: true,
       userName: '',
       onlineUsers: [],
       currentUser: null,

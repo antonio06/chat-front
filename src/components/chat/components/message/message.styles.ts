@@ -41,8 +41,8 @@ export const textWrapper = css`
   display: inline-flex;
   padding-left: 1.2rem;
   padding-right: 1.2rem;
-  padding-top: 0.8rem;
-  padding-bottom: 0.8rem;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
   border-radius: 0.2rem;
 `;
 

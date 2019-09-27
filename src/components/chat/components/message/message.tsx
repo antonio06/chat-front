@@ -17,12 +17,9 @@ export const Message: React.FunctionComponent<Props> = ({ message: { text, user 
   });
 
   return (
-    <animated.div style={springProps} css={[
-      styles.message,
-      isMyMessage(myUserId, user),
-    ]}>
-      <h3 css={styles.user}>{getUserName(user)}</h3>
-      <div css={styles.textWrapper}>
+    <animated.div style={springProps} css={styles.container}>
+      <h3 css={styles.username}>{getUserName(user)}</h3>
+      <div css={getBoxClassName(myUserId, user)}>
         <p css={styles.text}>{text}</p>
       </div>
     </animated.div>
@@ -33,8 +30,8 @@ const getUserName = (user: User | null) => {
   return user ? user.userName : 'unknown';
 };
 
-const isMyMessage = (userId: string, user: User | null): SerializedStyles | string => {
-  let result: SerializedStyles | string = '';
+const getBoxClassName = (userId: string, user: User | null): SerializedStyles | undefined => {
+  let result: SerializedStyles | undefined;
 
   if (user) {
     result = user.id === userId ?

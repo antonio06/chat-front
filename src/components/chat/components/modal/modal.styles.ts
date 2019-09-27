@@ -2,56 +2,59 @@ import { css } from '@emotion/core';
 import { theme } from '../../../../theme';
 
 export const modal = css`
-  align-self: center;
-  background-color: ${theme.colors.modal.background};
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  margin-top: 10%;
-  padding: 5rem;
-  position: fixed;
-  text-align: center;
-  z-index: 11;
-`;
-
-export const overlay = css`
+  align-items: flex-start;
   background-color: ${theme.colors.overlay.background};
+  display: flex;
   height: 100%;
+  justify-content: center;
   position: absolute;
   width: 100%;
   z-index: 10;
+`;
+
+export const card = css`
+  background-color: ${theme.colors.modal.background};
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin: 10% auto 0;
+  padding: 8rem;
+  text-align: center;
 `;
 
 export const input = css`
   border-left: none;
   border-right: none;
   border-top: none;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
+  display: block;
+  font-family: ${theme.font.family};
+  font-size: ${theme.font.sizes.body};
+  padding: 0.7rem 0;
   :focus {
-    box-shadow: 0 8px 6px -6px #e8f2f3;
     border-bottom-color: ${theme.colors.modal.inputBorder};
     outline: none;
   }
 `;
 
 export const button = css`
-  background-image: linear-gradient(to top left, ${theme.colors.modal.button.primary},
-   ${theme.colors.modal.button.secondary});
-  border-radius: 1.3rem;
+  background-color: ${theme.colors.modal.button.background};
+  border-radius: 0.4rem;
+  cursor: pointer;
+  display: block;
+  width: 100%;
   border: none;
-  color: white;
-  font-family: ${theme.fontFamily};
-  font-size: 1.2rem;
+  color: ${theme.colors.secondary};
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-top: 1rem;
-  padding: 0.5rem;
+  margin-top: 1.5rem;
+  padding: 0.7rem;
   :focus {
     outline: none;
   };
 `;
 
 export const error = css`
-  color: red;
-  font-size: 0.8rem;
+  color: #ED4C67;
+  font-size: ${theme.font.sizes.sub1};
+  text-align: left;
+  margin-top: 1rem;
 `;

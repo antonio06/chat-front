@@ -24,22 +24,21 @@ export const Modal: React.FunctionComponent<Props> = (props) => {
     <>
       {animation.map(({ item, key, props: {transform, opacity} }) => (
         item &&
-        <React.Fragment key={key}>
-          <animated.div css={styles.overlay} style={{opacity}}/>
-          <animated.div css={styles.modal} style={{transform}}>
+        <animated.form css={styles.modal} key={key} onSubmit={onSubmitHandler(props)} style={{opacity}}>
+          <animated.div css={styles.card} style={{transform}}>
             <input
-              placeholder="Type name"
-              value={props.userName}
-              onChange={onchangeHandler(props)}
               css={styles.input}
+              onChange={onchangeHandler(props)}
+              placeholder="Username"
+              value={props.userName}
             />
             {
               hasError &&
               <p css={styles.error}>{props.errorMessage}</p>
             }
-            <button css={styles.button} onClick={onSubmitHandler(props)}>Connect</button>
+            <button type="submit" css={styles.button}>Connect</button>
           </animated.div>
-        </React.Fragment>
+        </animated.form>
       ))}
     </>
   );
@@ -49,7 +48,7 @@ const onchangeHandler = (props: Props) => (event: React.ChangeEvent<HTMLInputEle
   props.onChangeUserName(event.target.value)
 );
 
-const onSubmitHandler = (props: Props) => (event: React.MouseEvent<HTMLButtonElement>) => {
+const onSubmitHandler = (props: Props) => (event: React.MouseEvent<HTMLFormElement>) => {
   if (props.onSubmitUserName) {
     event.preventDefault();
     props.onSubmitUserName();

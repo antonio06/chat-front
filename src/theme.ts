@@ -1,31 +1,32 @@
 require('typeface-quattrocento-sans');
-const mainChatColor = '#ECF1F5';
-const otherMessage = '#FEFFFD';
-const overlayColor = 'rgba(0, 0, 0, 0.5)';
-const modalColor = '#FFFFFF';
-const modalElements = '#75A7E3';
-const ownMessage = '#099AFF';
 
 export const theme = {
-  fontFamily: 'Quattrocento Sans',
+  font: {
+    family: 'Quattrocento Sans',
+    sizes: {
+      body: '1.5rem',
+      sub1: '1.3rem',
+    },
+  },
   colors: {
+    primary: '#141823',
+    secondary: '#ECF1F5',
     room: {
-      background: `${mainChatColor}`,
+      background: '#ECF1F5',
     },
     conversation: {
-      myMessage: `${ownMessage}`,
-      otherMessage: `${otherMessage}`,
+      primaryBackground: '#099AFF',
+      secondaryBackground: '#FFF',
     },
     overlay: {
-      background: `${overlayColor}`,
+      background: 'rgba(0, 0, 0, 0.5)',
     },
     modal: {
-      background: `${modalColor}`,
+      background: '#FFFFFF',
       button: {
-        primary: `${ownMessage}`,
-        secondary: `${mainChatColor}`,
+        background: '#636B76',
       },
-      inputBorder: `${modalElements}`,
+      inputBorder: '#75A7E3',
     },
   },
 };

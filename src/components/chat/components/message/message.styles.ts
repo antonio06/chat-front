@@ -27,7 +27,7 @@ export const otherMessage = css`
 
 export const username = css`
   color: ${theme.colors.primary};
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
 `;
 

@@ -2,40 +2,36 @@ import { css } from '@emotion/core';
 import { theme } from '../../../../theme';
 
 export const container = css`
+  display: flex;
+  flex-direction: column;
   :not(:last-child) {
     margin-bottom: 1rem;
   }
 `;
 
+export const myUser = css`
+  text-align: right;
+`;
+
 export const myMessage = css`
   align-self: flex-end;
-  div:first-of-type {
-    background-color: ${theme.colors.conversation.primaryBackground};
-    color: white;
-    font-size: 1rem;
-  };
-  & h3 {
-    text-align: right;
-  }
+  background-color: ${theme.colors.conversation.primaryBackground};
+  color: ${theme.colors.secondary};
+  font-size: 1.3rem;
 `;
 
 export const otherMessage = css`
-  div:first-of-type {
-    background-color: ${theme.colors.conversation.secondaryBackground};
-  }
-  & h3 {
-    text-align: left;
-  }
+  align-self: flex-start;
+  background-color: ${theme.colors.conversation.secondaryBackground};
 `;
 
 export const username = css`
-  color: ${theme.colors.secondary};
-  font-size: 0.9rem;
+  color: ${theme.colors.primary};
+  font-size: 1.1rem;
   margin-bottom: 1rem;
 `;
 
 export const textWrapper = css`
-  display: inline-flex;
   padding-left: 1.2rem;
   padding-right: 1.2rem;
   padding-top: 0.7rem;

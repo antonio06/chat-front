@@ -23,6 +23,8 @@ export const myMessage = css`
 export const otherMessage = css`
   align-self: flex-start;
   background-color: ${theme.colors.conversation.secondaryBackground};
+  color: ${theme.colors.primary};
+  font-size: 1.3rem;
 `;
 
 export const username = css`

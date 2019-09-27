@@ -39,11 +39,11 @@ const getUserName = (user: User | null) => {
 
 const getUserClassName = (userId: string, user: User | null): SerializedStyles | undefined => {
   if (user && user.id === userId) {
-    return styles.myUser
+    return styles.myUser;
   }
 
   return undefined;
-}
+};
 
 const getBoxClassName = (userId: string, user: User | null): SerializedStyles | undefined => {
   let result: SerializedStyles | undefined;

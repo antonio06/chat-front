@@ -29,5 +29,8 @@ export const theme = {
       },
       inputBorder: '#75A7E3',
     },
+    common: {
+      error: '#ED4C67',
+    },
   },
 };

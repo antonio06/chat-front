@@ -53,7 +53,7 @@ export const button = css`
 `;
 
 export const error = css`
-  color: #ED4C67;
+  color: ${theme.colors.common.error};
   text-align: left;
   margin-top: 1rem;
 `;

@@ -1,8 +1,12 @@
 import { css } from '@emotion/core';
 import { theme } from '../../../../theme';
 
-export const typography = css`
-  font-family: ${theme.font.family};
+export const body = css`
   font-size: ${theme.font.sizes.body};
-  font-size: 10px;
+  font-family: ${theme.font.family};
+`;
+
+export const sub = css`
+  font-size: ${theme.font.sizes.sub1};
+  font-family: ${theme.font.family};
 `;

@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { animated, useTransition } from 'react-spring';
+import { Typography } from '../typography';
 import * as styles from './modal.styles';
 
 interface Props {
@@ -22,10 +23,10 @@ export const Modal: React.FunctionComponent<Props> = (props) => {
 
   return (
     <>
-      {animation.map(({ item, key, props: {transform, opacity} }) => (
+      {animation.map(({ item, key, props: { transform, opacity } }) => (
         item &&
-        <animated.form css={styles.modal} key={key} onSubmit={onSubmitHandler(props)} style={{opacity}}>
-          <animated.div css={styles.card} style={{transform}}>
+        <animated.form css={styles.modal} key={key} onSubmit={onSubmitHandler(props)} style={{ opacity }}>
+          <animated.div css={styles.card} style={{ transform }}>
             <input
               css={styles.input}
               onChange={onchangeHandler(props)}
@@ -34,7 +35,13 @@ export const Modal: React.FunctionComponent<Props> = (props) => {
             />
             {
               hasError &&
-              <p css={styles.error}>{props.errorMessage}</p>
+              <Typography
+                component="p"
+                variant="body"
+                className={styles.error}
+              >
+                {props.errorMessage}
+              </Typography>
             }
             <button type="submit" css={styles.button}>Connect</button>
           </animated.div>

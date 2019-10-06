@@ -3,6 +3,7 @@ import * as React from 'react';
 import { animated, useSpring } from 'react-spring';
 import { User } from '../../../../api/models';
 import { Message as MessageEntity } from '../room/view-model';
+import { Typography } from '../typography';
 import * as styles from './message.styles';
 
 interface Props {
@@ -18,16 +19,14 @@ export const Message: React.FunctionComponent<Props> = ({ message: { text, user 
 
   return (
     <animated.div style={springProps} css={styles.container}>
-      <h3 css={[
-        styles.username,
-        getUserClassName(myUserId, user),
-      ]}>
+      <h3 css={[styles.username, getUserClassName(myUserId, user)]}>
         {getUserName(user)}</h3>
-      <div css={[
-        styles.textWrapper,
-        getBoxClassName(myUserId, user),
-      ]}>
-        <p css={styles.text}>{text}</p>
+      <div css={[styles.textWrapper, getBoxClassName(myUserId, user)]}>
+        <Typography
+          className={styles.text}
+        >
+          {text}
+        </Typography>
       </div>
     </animated.div>
   );

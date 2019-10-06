@@ -54,7 +54,6 @@ export const button = css`
 
 export const error = css`
   color: #ED4C67;
-  font-size: ${theme.font.sizes.sub1};
   text-align: left;
   margin-top: 1rem;
 `;

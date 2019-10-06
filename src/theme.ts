@@ -6,6 +6,7 @@ export const theme = {
     sizes: {
       body: '1.5rem',
       sub1: '1.3rem',
+      heading: '1.2rem',
     },
   },
   colors: {

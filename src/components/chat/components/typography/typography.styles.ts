@@ -10,3 +10,7 @@ export const sub = css`
   font-size: ${theme.font.sizes.sub1};
   font-family: ${theme.font.family};
 `;
+
+export const heading = css`
+font-family: ${theme.font.family};
+`;

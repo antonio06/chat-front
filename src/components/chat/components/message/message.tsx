@@ -19,8 +19,13 @@ export const Message: React.FunctionComponent<Props> = ({ message: { text, user 
 
   return (
     <animated.div style={springProps} css={styles.container}>
-      <h3 css={[styles.username, getUserClassName(myUserId, user)]}>
-        {getUserName(user)}</h3>
+      <Typography
+        component="h3"
+        variant="heading"
+        className={[styles.username, getUserClassName(myUserId, user)]}
+      >
+        {getUserName(user)}
+      </Typography>
       <div css={[styles.textWrapper, getBoxClassName(myUserId, user)]}>
         <Typography
           className={styles.text}

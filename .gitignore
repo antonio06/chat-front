@@ -65,6 +65,3 @@ package-lock.json
 
 # build destinations
 dist
-
-# mocks
-mocks

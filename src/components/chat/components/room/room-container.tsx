@@ -14,7 +14,6 @@ interface Props {
 interface State {
   message: string;
   conversation: Message[];
-  myUserId: string;
 }
 
 export class RoomContainer extends React.PureComponent<Props, State> {
@@ -27,7 +26,6 @@ export class RoomContainer extends React.PureComponent<Props, State> {
     this.state = {
       conversation: [],
       message: '',
-      myUserId: '',
     };
   }
 
@@ -72,16 +70,19 @@ export class RoomContainer extends React.PureComponent<Props, State> {
       });
       this.setState({
         message: '',
-        myUserId: this.props.user.id,
       });
     }
+  }
+
+  existUser = () => {
+    return this.props.user ? this.props.user.id : '';
   }
 
   render() {
     return (
       <Room
         message={this.state.message}
-        myUserId={this.state.myUserId}
+        myUserId={this.existUser()}
         conversation={this.state.conversation}
         onChangeMessage={this.onChangeMessage}
         onSubmitMessage={this.onSubmitMessage}

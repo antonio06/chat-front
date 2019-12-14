@@ -3,7 +3,7 @@ import { events } from '../../api';
 import { User } from '../../api/models';
 import { userApi } from '../../api/user/userApi';
 import { SocketContext } from '../../socket';
-import { Chat } from './chat-room';
+import { Chat } from './chat';
 import { getErrorMessageFromApiError } from './error-service';
 
 interface State {

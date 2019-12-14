@@ -33,11 +33,11 @@ export const username = css`
 `;
 
 export const textWrapper = css`
-  padding-left: 1.2rem;
-  padding-right: 1.2rem;
-  padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
-  border-radius: 0.2rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0.3rem;
 `;
 
 export const text = css`

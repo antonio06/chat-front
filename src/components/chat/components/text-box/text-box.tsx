@@ -31,6 +31,7 @@ export const TextBox: React.FunctionComponent<Props> = ({ message, onChangeMessa
         cols={100}
         css={styles.textarea}
         name="message"
+        maxRows={4}
       />
     </div>
   );

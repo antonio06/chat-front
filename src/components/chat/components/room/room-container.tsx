@@ -74,7 +74,7 @@ export class RoomContainer extends React.PureComponent<Props, State> {
     }
   }
 
-  existUser = () => {
+  getUserId = () => {
     return this.props.user ? this.props.user.id : '';
   }
 
@@ -82,7 +82,7 @@ export class RoomContainer extends React.PureComponent<Props, State> {
     return (
       <Room
         message={this.state.message}
-        myUserId={this.existUser()}
+        myUserId={this.getUserId()}
         conversation={this.state.conversation}
         onChangeMessage={this.onChangeMessage}
         onSubmitMessage={this.onSubmitMessage}

@@ -8,7 +8,7 @@ export const textBox = css`
 export const textarea = css`
   padding: 1rem;
   font-size: 1.6rem;
-  padding-top: 2rem;
+  padding-top: 4rem;
   padding-left: 2rem;
   resize: none;
   white-space: pre-wrap;

@@ -14,19 +14,21 @@ interface Props {
   onSubmitUserName(): void;
 }
 
-export const Chat: React.FunctionComponent<Props> = (props) => {
+export const Chat: React.FunctionComponent<Props> = (
+  { showModal, user, userName, errorMessage,
+     onlineUsers, onSubmitUserName, onChangeUserName }) => {
   return (
     <div css={styles.chat}>
       <Modal
-        isOpen={props.showModal}
-        onChangeUserName={props.onChangeUserName}
-        userName={props.userName}
-        onSubmitUserName={props.onSubmitUserName}
-        errorMessage={props.errorMessage}
+        isOpen={showModal}
+        onChangeUserName={onChangeUserName}
+        userName={userName}
+        onSubmitUserName={onSubmitUserName}
+        errorMessage={errorMessage}
       />
       <RoomContainer
-        user={props.user}
-        onlineUsers={props.onlineUsers}
+        user={user}
+        onlineUsers={onlineUsers}
       />
     </div>
   );

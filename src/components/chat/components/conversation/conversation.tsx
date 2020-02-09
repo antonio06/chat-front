@@ -8,7 +8,7 @@ interface Props {
   myUserId: string;
 }
 
-export const Conversation: React.FunctionComponent<Props> = ({conversation, myUserId}) => {
+export const Conversation: React.FunctionComponent<Props> = ({ conversation, myUserId }) => {
   return (
     <div css={styles.conversation}>
       {

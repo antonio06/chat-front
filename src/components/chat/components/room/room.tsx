@@ -12,17 +12,18 @@ interface Props {
   onSubmitMessage(): void;
 }
 
-export const Room: React.FunctionComponent<Props> = (props) => {
+export const Room: React.FunctionComponent<Props> = (
+  { conversation, message, myUserId, onChangeMessage, onSubmitMessage }) => {
   return (
     <div css={styles.room}>
       <Conversation
-        conversation={props.conversation}
-        myUserId={props.myUserId}
+        conversation={conversation}
+        myUserId={myUserId}
       />
       <TextBox
-        message={props.message}
-        onChangeMessage={props.onChangeMessage}
-        onSubmitMessage={props.onSubmitMessage}
+        message={message}
+        onChangeMessage={onChangeMessage}
+        onSubmitMessage={onSubmitMessage}
       />
     </div>
   );

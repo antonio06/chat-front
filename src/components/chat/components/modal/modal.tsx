@@ -11,11 +11,12 @@ interface Props {
   onSubmitUserName(): void;
 }
 
-export const Modal: React.FunctionComponent<Props> = (props) => {
+export const Modal: React.FunctionComponent<Props> = ( props,
+  { isOpen, userName, errorMessage }) => {
 
-  const hasError = Boolean(props.errorMessage);
+  const hasError = Boolean(errorMessage);
 
-  const animation = useTransition(props.isOpen, null, {
+  const animation = useTransition(isOpen, null, {
     from: { transform: 'translateX(-100vw)', opacity: 0 },
     enter: { transform: 'translateX(0)', opacity: 1 },
     leave: { transform: 'translateX(100vw)', opacity: 0 },
@@ -31,7 +32,7 @@ export const Modal: React.FunctionComponent<Props> = (props) => {
               css={styles.input}
               onChange={onchangeHandler(props)}
               placeholder="Username"
-              value={props.userName}
+              value={userName}
             />
             {
               hasError &&
@@ -40,7 +41,7 @@ export const Modal: React.FunctionComponent<Props> = (props) => {
                 variant="body"
                 className={styles.error}
               >
-                {props.errorMessage}
+                {errorMessage}
               </Typography>
             }
             <button type="submit" css={styles.button}>Connect</button>

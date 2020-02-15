@@ -3,7 +3,7 @@ import { events } from '../../api';
 import { User } from '../../api/models';
 import { userApi } from '../../api/user/userApi';
 import { SocketContext } from '../../socket';
-import { ChatRoom } from './chat-room';
+import { Chat } from './chat';
 import { getErrorMessageFromApiError } from './error-service';
 
 interface State {
@@ -14,7 +14,7 @@ interface State {
   errorMessage: string;
 }
 
-export class ChatRoomContainer extends React.PureComponent<{}, State> {
+export class ChatContainer extends React.PureComponent<{}, State> {
 
   static contextType = SocketContext;
   context!: React.ContextType<typeof SocketContext>;
@@ -22,7 +22,7 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
   constructor(props) {
     super(props);
     this.state = {
-      showModal: false,
+      showModal: true,
       userName: '',
       onlineUsers: [],
       currentUser: null,
@@ -91,7 +91,7 @@ export class ChatRoomContainer extends React.PureComponent<{}, State> {
 
   render() {
     return (
-      <ChatRoom
+      <Chat
         showModal={this.state.showModal}
         onChangeUserName={this.onChangeUserName}
         user={this.state.currentUser}

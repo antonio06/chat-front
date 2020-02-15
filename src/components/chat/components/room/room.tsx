@@ -7,20 +7,23 @@ import { Message } from './view-model';
 interface Props {
   conversation: Message[];
   message: string;
+  myUserId: string;
   onChangeMessage(newMessage: string): void;
   onSubmitMessage(): void;
 }
 
-export const Room: React.FunctionComponent<Props> = (props) => {
+export const Room: React.FunctionComponent<Props> = (
+  { conversation, message, myUserId, onChangeMessage, onSubmitMessage }) => {
   return (
     <div css={styles.room}>
       <Conversation
-        conversation={props.conversation}
+        conversation={conversation}
+        myUserId={myUserId}
       />
       <TextBox
-        message={props.message}
-        onChangeMessage={props.onChangeMessage}
-        onSubmitMessage={props.onSubmitMessage}
+        message={message}
+        onChangeMessage={onChangeMessage}
+        onSubmitMessage={onSubmitMessage}
       />
     </div>
   );

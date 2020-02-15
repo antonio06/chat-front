@@ -1,29 +1,36 @@
 require('typeface-quattrocento-sans');
-const roomColor = '#e8f2f3';
-const messageColor = '#fefffd';
-const overlayColor = '#989898';
-const modalColor = '#ffffff';
-const modalElements = '#84babf';
 
 export const theme = {
-  fontFamily: 'Quattrocento Sans',
-  colors: {
-    room: {
-      background: `${roomColor}`,
+  font: {
+    family: 'Quattrocento Sans',
+    sizes: {
+      body: '1.5rem',
+      sub1: '1.3rem',
+      heading: '1.2rem',
     },
-    message: {
-      background: `${messageColor}`,
+  },
+  colors: {
+    primary: '#141823',
+    secondary: '#ECF1F5',
+    room: {
+      background: '#ECF1F5',
+    },
+    conversation: {
+      primaryBackground: '#099AFF',
+      secondaryBackground: '#FFF',
     },
     overlay: {
-      background: `${overlayColor}`,
+      background: 'rgba(0, 0, 0, 0.5)',
     },
     modal: {
-      background: `${modalColor}`,
+      background: '#FFFFFF',
       button: {
-        primary: `${modalElements}`,
-        secondary: '#437c80',
+        background: '#636B76',
       },
-      inputBorder: `${modalElements}`,
+      inputBorder: '#75A7E3',
+    },
+    common: {
+      error: '#ED4C67',
     },
   },
 };

@@ -1,6 +1,7 @@
 import { css } from '@emotion/core';
+import { theme } from './theme';
 
-export const resetStyles = css`
+const resetStyles = css`
   /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -48,5 +49,18 @@ export const resetStyles = css`
   table {
     border-collapse: collapse;
     border-spacing: 0;
+  }
+`;
+
+export const globalStyles = css`
+  ${resetStyles}
+
+  html {
+    font-size: 10px;
+  }
+
+  body {
+    font-family: ${theme.font.family};
+    font-size: ${theme.font.sizes.body};
   }
 `;

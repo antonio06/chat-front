@@ -1,6 +1,6 @@
 import { css } from '@emotion/core';
 
-export const chatRoom = css`
+export const chat = css`
   display: flex;
   flex-direction: column;
   height: 100vh;
